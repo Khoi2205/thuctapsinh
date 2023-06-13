@@ -13,7 +13,7 @@ welcome
 Ctrl-D
 ```
 
-![Untitled](text_command%20bdcd43a12e974aa28c398b3d317e8c84/Untitled.png)
+![](../images/Untitled%203.png)
 
 `tac`
 
@@ -73,7 +73,7 @@ Tham số -c cho phép chúng ta đếm số lần lặp lại của một dòng
 
 `sort myfile.txt | uniq -c`
 
-![Untitled](text_command%20bdcd43a12e974aa28c398b3d317e8c84/Untitled%202.png)
+![Untitled](/Untitled%202.png)
 
 Với tuỳ chọn -d,
 -d chỉ in ra những dòng bị lặp lại bỏ qua những dòng không lặp lại 
