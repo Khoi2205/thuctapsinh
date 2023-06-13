@@ -37,3 +37,11 @@ hiện hữu.
 --help Hiển thị thông báo trợ giúp và thoát.
 --version Hiển thị thông tin phiên bản và thoát.
 ```
+Câu lệnh thường dùng là `uname -a` : Hiển thị tất cả thông tin  về hệ thống
+![Imgur](https://i.imgur.com/vrfUs9n.png)
+
+`systemctl start [tên dịch vụ]` : Để bắt đầu một dịch vụ
+`systemctl stop [tên dịch vụ] `Để dừng một dịch vụ
+`systemctl restart [tên dịch vụ]` Để khởi động lại một dịch vụ
+`systemctl reload [tên dịch vụ]` Để yêu cầu dịch vụ tải lại cấu hình của nó
+`systemctl status [tên dịch vụ]` Để hiển thị trạng thái hiện tại của dịch vụ
