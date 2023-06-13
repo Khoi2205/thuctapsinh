@@ -17,7 +17,7 @@ Ctrl-D
 
 `tac`
 
-![Untitled](text_command%20bdcd43a12e974aa28c398b3d317e8c84/Untitled%201.png)
+![Untitled](../images/Untitled%204.png)
 
 ## 2.Thao tác với awk
 
@@ -73,17 +73,17 @@ Tham số -c cho phép chúng ta đếm số lần lặp lại của một dòng
 
 `sort myfile.txt | uniq -c`
 
-![Untitled](/Untitled%202.png)
+![Untitled](../images/Untitled%205.png)
 
 Với tuỳ chọn -d,
 -d chỉ in ra những dòng bị lặp lại bỏ qua những dòng không lặp lại 
 
-![Untitled](text_command%20bdcd43a12e974aa28c398b3d317e8c84/Untitled%203.png)
+![Untitled](../images/Untitled%206.png)
 
 Với tuỳ chọn -u,
 -u chỉ in ra những dòng không lặp lại , bỏ qua những dòng lặp lại
 
-![Untitled](text_command%20bdcd43a12e974aa28c398b3d317e8c84/Untitled%204.png)
+![Untitled](../images/Untitled%207.png)
 
 `paste` lệnh được sử dụng để kết hợp các trường từ các tệp khác nhau
 
@@ -105,11 +105,13 @@ welcome 12
 welcome 43
 ```
 
-![Untitled](text_command%20bdcd43a12e974aa28c398b3d317e8c84/Untitled%205.png)
+
+![Untitled](../images/Untitled%208.png)
 
 `join` lệnh kết hợp hai tệp trên một trường chung
 
-![Untitled](text_command%20bdcd43a12e974aa28c398b3d317e8c84/Untitled%206.png)
+![Untitled](
+![Untitled](../images/Untitled%209.png)
 
 ## 4.Thao tác với `Grep`
 
@@ -117,35 +119,35 @@ Là lệnh tìm kiếm văn bản trong Linux
 
 Có 2 văn bản sau 
 
-![Untitled](text_command%20bdcd43a12e974aa28c398b3d317e8c84/Untitled%207.png)
+
+![Untitled](../images/Untitled%2010.png)
 
 vd: Tìm từ welcome trong văn bản myfile.txt
 
 `grep "welcome" myfile.txt`
 
-![Untitled](text_command%20bdcd43a12e974aa28c398b3d317e8c84/Untitled%208.png)
+![Untitled](../images/Untitled%2011.png)
 
 Tìm kiếm từ “su dung” trên nhiều file 
 
-![Untitled](text_command%20bdcd43a12e974aa28c398b3d317e8c84/Untitled%209.png)
+![Untitled](../images/Untitled%2012.png)
 
 Tìm kiếm không phân biệt chữ hoa chữ thường chọn **-i**
 
-![Untitled](text_command%20bdcd43a12e974aa28c398b3d317e8c84/Untitled%2010.png)
+![Untitled](../images/Untitled%2013.png)
 
 Tìm kiếm ngược, sử dụng tùy chọn **-v**
 
-![Untitled](text_command%20bdcd43a12e974aa28c398b3d317e8c84/Untitled%2011.png)
-
+![Untitled](../images/Untitled%2014.png)
 . Hiển thị số dòng, số lượng, giới hạn số dòng đầu ra
 
 • -n : Hiển thị số thứ tự của dòng và dòng chứa từ cần tìm
 
-![Untitled](text_command%20bdcd43a12e974aa28c398b3d317e8c84/Untitled%2012.png)
+![Untitled](../images/Untitled%2015.png)
 
 • -c : Hiển thị số dòng với thứ tự khớp cần tìm
 
-![Untitled](text_command%20bdcd43a12e974aa28c398b3d317e8c84/Untitled%2013.png)
+![Untitled](../images/Untitled%2016.png)
 
 .Tìm kiếm nhiều chuỗi 
 
@@ -161,52 +163,49 @@ c3:
 
 `grep "keyword1"\|"keyword2" [tenfile1][tenfile2]`
 
-![Untitled](text_command%20bdcd43a12e974aa28c398b3d317e8c84/Untitled%2014.png)
+![Untitled](../images/Untitled%2017.png)
 
-![Untitled](text_command%20bdcd43a12e974aa28c398b3d317e8c84/Untitled%2015.png)
-
-![Untitled](text_command%20bdcd43a12e974aa28c398b3d317e8c84/Untitled%2016.png)
+![Untitled](../images/Untitled%2018.png)
+![Untitled](../images/Untitled%2019.png)
 
 **Tìm kiếm tên tệp**
 
 `-l` : Để có được các tập tin phù hợp với tìm kiếm
 
-![Untitled](text_command%20bdcd43a12e974aa28c398b3d317e8c84/Untitled%2017.png)
-
+![Untitled](../images/Untitled%2020.png)
 `-L` : Tìm kiếm trong thư mục **file**,in ra các tên có trong chữ tìm kiếm
 
-![Untitled](text_command%20bdcd43a12e974aa28c398b3d317e8c84/Untitled%2018.png)
+![Untitled](../images/Untitled%2021.png)
 
 `-h` : in ra kết quả những dòng không kèm tên file
 
 `-H` : in ra kết quả + tên file 
 
-![Untitled](text_command%20bdcd43a12e974aa28c398b3d317e8c84/Untitled%2019.png)
+![Untitled](../images/Untitled%2022.png)
 
 `-w` In ra chính xác những dòng có chứa keyword
 
-![Untitled](text_command%20bdcd43a12e974aa28c398b3d317e8c84/Untitled%2020.png)
+![Untitled](../images/Untitled%2023.png)
 
 `-r` Tìm tất cả các file ở tất cả các thư mục con
 
-![Untitled](text_command%20bdcd43a12e974aa28c398b3d317e8c84/Untitled%2021.png)
-
+![Untitled](../images/Untitled%2024.png)
 `-w -c`  Đếm số kq + hiển thị tên file chứa
 
-![Untitled](text_command%20bdcd43a12e974aa28c398b3d317e8c84/Untitled%2022.png)
+![Untitled](../images/Untitled%2025.png)
 
 `-l -r -w` Chỉ hiển thị tên file
 
-![Untitled](text_command%20bdcd43a12e974aa28c398b3d317e8c84/Untitled%2023.png)
+![Untitled](../images/Untitled%2026.png)
 
 **Đọc file loại bỏ comment, dòng trống**
 
 Đây là file nhiều command
 
-![Untitled](text_command%20bdcd43a12e974aa28c398b3d317e8c84/Untitled%2024.png)
+![Untitled](../images/Untitled%2027.png)
 
 Đây là file sau khi loại bỏ command
 
 `egrep -v "^#|^*#|^$” /etc/nginx/nginx.conf`
 
-![Untitled](text_command%20bdcd43a12e974aa28c398b3d317e8c84/Untitled%2025.png)
+![Untitled](../images/Untitled%2028.png)
