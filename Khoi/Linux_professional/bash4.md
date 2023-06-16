@@ -1,4 +1,4 @@
-##Chaper 22 -> 
+## Chaper 22 -> 30
 ### 22.Biểu thức có điều kiện 
 **22.1 Kiểm tra loại tệp**
 - Tham số -e kiểm tra có điều kiện khai thác xem một tập tin 
