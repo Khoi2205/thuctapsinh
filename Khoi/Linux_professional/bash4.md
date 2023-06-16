@@ -56,7 +56,10 @@ fi
 [[ $s -eq 10 ]] && echo 'equal' || echo "not equal"
 (( $s == 10 )) && echo 'equal' || echo 'not equal'
 ```
+
 ![Alt text](./anh_bash4/image.png)
+
+
 - Kiểm tra một lớp lót và thoát 
 ```
 command && echo 'exited with 0' || echo 'not 0 exit'
@@ -90,9 +93,18 @@ else
     echo "hai file khác nhau"
 fi
 ```
+
 ![Alt text](./anh_bash4/image-2.png)
+
+
+
 ![Alt text](./anh_bash4/image-3.png)
+
+
+
 ![Alt text](./anh_bash4/image-4.png)
+
+
 
 **22.6 Kiểm tra quyền truy cập tệp**
 
@@ -148,8 +160,14 @@ else
     echo "hai số bằng nhau"
 fi
 ```
+
 ![Alt text](./anh_bash4/image-5.png)
+
+
+
 ![Alt text](./anh_bash4/image-6.png)
+
+
 
 ### 23 Scripting với tham số
 **23.1Phân tích cú pháp nhiều tham số**
@@ -183,8 +201,14 @@ done
 echo "A: $valA"
 echo "B: $valB"
 ```
+
 ![Alt text](./anh_bash4/image-8.png)
+
+
+
 ![Alt text](./anh_bash4/image-7.png)
+
+
 **23.2 Phân tích cú pháp đối số bằng vòng lặp for**
 vd :
 ```
@@ -218,7 +242,10 @@ for arg in "$@"; do
     esac
 done
 ```
+
 ![Alt text](./anh_bash4/image-9.png)
+
+
 
 **23.2 Tập lệnh gói**
 Tập lệnh gói là một tập lệnh bao bọc một tập lệnh hoặc lệnh khác để cung cấp các chức năng bổ sung hoặc chỉ để thực hiện một cái gì đó ít tẻ nhạt hơn.
@@ -242,7 +269,10 @@ echo "First argument: $1"
 echo "Second argument: $2"
 echo "All arguments: $@"
 ```
+
 ![Alt text](./anh_bash4/image-10.png)
+
+
 ### 24 Sự thay thế lịch sử bash
 **24.1 Tham khảo nhanh**
 - Tương tác với lịch sử
@@ -264,7 +294,10 @@ do
     man $command | grep -A1 DESCRIPTION | tail -n1
 done
 ```
+
 ![Alt text](./anh_bash4/image-11.png)
+
+
 **24.2Lặp lại lệnh trước với sudo**
 ```
 $ apt-get install r-base
@@ -283,9 +316,15 @@ sudo apt-get install r-base
 ### 25 Toán được sử dụng
 **25.1 Toán sử dụng được**
 - Để in một phần tử đầu ngăn xếp sử dụng lệnh p
+
 ![Alt text](./anh_bash4/image-12.png)
+
+
 Hoặc
+
 ![Alt text](./anh_bash4/image-13.png)
+
+
 Đối với số âm use _ prefix
 ```
 dc <<< '_1 p'
@@ -296,10 +335,16 @@ dc <<< '_1 p'
 **25.2 Toán tử được sử dụng khả năng bash**
 - Phép nhân 
 `echo $((10*21))`
+
 ![Alt text](./anh_bash4/image-14.png)
+
+
 - Phép chia 
 `echo $((21\10))`
+
 ![Alt text](./anh_bash4/image-15.png)
+
+
 - Luỹ thừa:
 `echo $((5 ** 2))`
 ### 26: Bash Arithmetic
@@ -312,7 +357,10 @@ var2=5
 ((output=$var1 * $var2))
 printf "%d\n" "$output"
 ```
+
 ![Alt text](./anh_bash4/image-16.png)
+
+
 **26.2 Lệnh số học**
 - let 
 ```
@@ -334,7 +382,10 @@ if (( $x < $y )); then
 fi
 ```
 output
+
 ![Alt text](./anh_bash4/image-17.png)
+
+
 
 ### 27 Scoping
 **27.1 Phạm vi hoạt động**
@@ -366,13 +417,19 @@ outer_function
 **28.3  Truyền một tệp qua nhiều chương trình tại Một lần**
 - Điều này đếm số dòng trong một tệp lớn bằng wc -l trong khi nén đồng thời bằng gzip . Cả hai đều chạy kiêm nhiệm.
 `tee >(wc -l >&2) < bigfile | gzip > bigfile.gz`
+
 ![Alt text](./anh_bash4/image-18.png)
+
+
 **28.4 paste command**
 `paste <( ls /path/to/directory1 ) <( ls /path/to/directory2 )`
 **28.5 Để tránh sử dụng sub-shell**
 Một khía cạnh chính của thay thế quy trình là có cho phép chúng ta trính sủ dụng sub-shell khi đặt các lệnh từ trình bao.
 ` find . -maxdepth 1 -type f -print`
+
 ![Alt text](./anh_bash4/image-19.png)
+
+
  được sử dụng để tìm kiếm tất cả các tệp tin trong thư mục hiện tại (".") và không đi vào các thư mục con (-maxdepth 1) và chỉ liệt kê các tệp tin (-type f). Kết quả được trả về là danh sách các tên tệp tin được in ra trên một dòng riêng biệt.
 
 

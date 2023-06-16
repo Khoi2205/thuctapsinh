@@ -23,6 +23,8 @@ done
 ### List Assignment
 
 ![Alt text](./anh_bash2/image.png)
+
+
 - Trong dấu ngoặc vuông là thứ tự của phần trong mảng.
 @: Lấy ra tất cả các phần tử trong mảng
 Số nguyên dương là từ trái qua phải. Bắt đầu bằng 0 là phần tử đầu tiên
@@ -32,8 +34,10 @@ Số nguyên âm là lấy từ phải qua trải bắt đầu bằng -1
 `city=([3]="nghe an" [4]="Hue")`
 
 ![Alt text](./anh_bash2/image-1.png)
+
 - Tạo bảng động
 arr=(`seq 1 10`)
+
 ![Alt text](./anh_bash2/image-2.png)
 
 ### Truy cập các phần tử mảng
@@ -49,11 +53,19 @@ arr=(`seq 1 10`)
 `echo "${arr[@]}"`
 - In tất cả các phần tử từ chỉ mục lùi về sau 
 `echo "${arr[@]:2}`
+
+
 ![Alt text](./anh_bash2/image-3.png)
+
+
 - Hoạt động chuỗi
 `echo "${array[0]:0:3}"`: Lấy ra phần tử đầu tiên, trong đó 0 khởi đầu và lấy 3 ký tự trong phần tử để in ra
 ` echo "${array[0]:0:3}"`
+
+
 ![Alt text](./anh_bash2/image-4.png)
+
+
 `echo "${arr[3]:2:4}"` : Lấy ra phần tử thứ 4, trong đó 2 khởi đầu và lấy 4 ký tự trong phần tử để in ra
 
 ### Sửa đổi mảng
@@ -71,12 +83,20 @@ zero number one two bashshell new1new2
 ```
 ### Thay thế toàn bộ mảng bằng một danh sách tham số mới 
 `array=("${array[@]}" "new1" "new2")`
-![Alt text]./anh_bash2/(image-5.png)
+
+
+![Alt text](./anh_bash2/(image-5.png)
+
+
 ### Chèn một phần tử vào vị trí đâu tiên
 `array=("new With Begin" "${array[@]}")`
+
+
 ![Alt text](./anh_bash2/image-6.png)
 
 ### Chèn phần tử vào vị trí nhất định
+
+
 ![Alt text](./anh_bash2/image-7.png)
 
 ### Xóa một phần tử được chỉ định
@@ -106,6 +126,8 @@ for ((i=0; i < ${#arr[@]}; ++i)); do
 done
 ~
 ```
+
+
 ![Alt text](./anh_bash2/image-8.png)
 
 ### Độ dài của mảng 
@@ -115,6 +137,8 @@ a b c d e f
 [root@lab-tts ~]# echo "${#arr[@]}"
 6
 ```
+
+
 ![Alt text](./anh_bash2/image-9.png)
 
 
@@ -136,7 +160,11 @@ greet() {
 greet "$1"
 ```
 Output: 
+
+
 ![Alt text](./anh_bash2/image-10.png)
+
+
 - Với nhiều đối số Ví dụ 2:
 ```
 In() {
@@ -145,7 +173,11 @@ In() {
 }
 In "$@"
 ```
+
+
 ![Alt text](./anh_bash2/image-11.png)
+
+
 ### In định nghĩa hàm
 ```
 callfunc() {
@@ -157,6 +189,10 @@ function func(){
 funcd="$(callfunc func)"
 callfunc func # hoặc  echo "$funcd"
 ```
+
+
 ![Alt text](./anh_bash2/image-12.png)
+
+
 Hàm callfunc nhận một tên hàm làm tham số, sau đó dùng lệnh `declare -f` để truy xuất định nghĩa của hàm đó và gán vào biến funcd.
 

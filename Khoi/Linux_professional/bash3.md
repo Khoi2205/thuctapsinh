@@ -146,7 +146,9 @@ Lệnh trên sẽ tim một các đệ quy tất cả các thư mục (-type d) 
 #### Thực tên tệp theo thời gian truy cập sửa đổi 
 - Tìm các tệp không sửa đổi trong vòng 2 giờ qua  
 `find . -mmin +120`
+
 ![Alt text](./anh_bash3/image-1.png)
+
 
 `find . -amin -120`
 `find . -cmin +120`
@@ -154,10 +156,14 @@ Lệnh trên sẽ tim một các đệ quy tất cả các thư mục (-type d) 
 `mmin n:` Tệp đã được sửa đổi n phút trước
 `nmin -n`: Tệp đã được thay đổi trong vòng n phút trước
 `mmin +n`: Tệp đã được sửa đổi hơn n phút rồi.
+
 ![Alt text](./anh_bash3/image-2.png)
+
 - Tìm các tệp được sửa đổi trong 2 ngày qua
 `find . -mtime -2`
+
 ![Alt text](./anh_bash3/image-3.png)
+
 - Sử dụng` -atime` và `-ctime` cho thời gian truy cập và thời gian thay đổi trạng thái tương ứng. Định dạng chung:
 `-mtime n`: File được sửa đổi trong vòng n ngày qua
 `-mtime -n`: File được sửa đổi ít hơn n ngày
@@ -176,7 +182,9 @@ timeout 10 find "$LOCAL_FOLDER" -newerat "start_date" ! -newerat "end_date" -pri
 `find -type f -size +15M`
 - Tìm kiếm tệp lớn hơn 10kb
 `find -type f -size +10kb`
+
 ![Alt text](./anh_bash3/image-4.png)
+
 - Tìm kiếm tập tin có chính xác kích thước `10kb`
 `find -type f -size 10kb`
 - Định dạng chung 
@@ -206,7 +214,9 @@ Các `-path `tham số cho phép chỉ định một mô hình để phù hợp 
 Để tìm tất cả các tệp, tất cả các tệp ngoại trừ những tệp được chứa trong một thư mục được gọi là tệp bin hoặc tệp nhật ký:
 
 `find . -type f -not -path '*log' -not -path '*/bin/*'`
+
 ![Alt text](./anh_bash3/image-5.png)
+
 #### Tìm kiếm tập tin theo loại 
 - Tìm kiếm tệp `-type f`
 `find . -type f`
@@ -216,11 +226,15 @@ Các `-path `tham số cho phép chỉ định một mô hình để phù hợp 
 `find . -type b`
 - Để tìm liến kết tượng trưng `-type l`
 `find . -type l`
+
 ![Alt text](./anh_bash3/image-6.png)
+
 #### Tìm kiếm theo phần mở rộng cụ thể 
 `find . -maxdepth 1 -type f -name "*.sh"`
 Để tìm tất cả các tệp loại .sh chỉ từ thư mục hiện tại, 
+
 ![Alt text](./anh_bash3/image-7.png)
+
 
 ### Sử dụng ngăn xếp(using sort)
 - Lệnh sort được sử dụng để sắp xếp thành một các danh sách dòng 
@@ -239,7 +253,9 @@ Các `-path `tham số cho phép chỉ định một mô hình để phù hợp 
 
 Để sắp xếp tệp này theo số,  sử dụng tham số `-n:`
 `sort -n file`
+
 ![Alt text](./anh_bash3/image-9.png)
+
 Để đảo ngược thứ tự sắp xếp sử dụng tham số `-rn:`
 `sort -rn file`
 
@@ -256,7 +272,9 @@ sayhello(){
 ```
 - Thực hiện source test.sh
 - Thực hiện sẵn tài nguyên từ tệp ouput hiện ra 
+
 ![Alt text](./anh_bash3/image-10.png)
+
 ### Sourcing một môi trường ảo
 Khi phát triển một số ứng dụng trên máy, việc tách các phần phụ thuộc thành các phần phụ thuộc ra môi trường ảo sẽ trở nên hữu ích.
 Với việc sử dụng virtualenv, các môi trường được lấy nguồn từ shell của bạn để khi bạn chạy một lệnh, nó đến từ môi trường ảo đó. Điều này được cài đặt phổ biến nhất bằng cách sử dụng pip.
@@ -283,13 +301,17 @@ EOF
 bị thoát vì chúng tôi không muốn nó được mở rộng bởi shell hiện tại, tức là $ (pwd) sẽ được thực thi trênvỏ từ xa.
 **20.2 Create a file - Tạo tệp**
 ```
+
 ![Alt text](image-12.png)
+
 ```
 - trong trong file 
 - Cấp quyền thực thi và chạy với lệnh ./file
 - Khi chạy file sẽ xuất hiện file `sport.txt`
 Tài liệu này ở đây trở thành đầu vào của lệnh cat . Lệnh cat chỉ xuất ra đầu vào của nó và sử dụngtoán tử chuyển hướng đầu ra > chuyển hướng đến tệp sport.txt .
+
 ![Alt text](./anh_bash3/image-13.png)
+
 **20.3 Here strings - Chuỗi đây**
 - Để cung cấp lệnh bằng cách sử dụng chuỗi sau 
 ```
@@ -322,7 +344,9 @@ Test 2
 test_chuoi
 ```
 ouput
+
 ![Alt text](./anh_bash3/image-14.png)
+
 
 ### 21.Quoting - Trích dẫn
 **21.1 Double quotes for variable and command substitution - Dấu ngoặc kép cho biến và lệnh thay thế**
@@ -332,7 +356,9 @@ vd
 calculation='10 * 3'
 echo "$(($calculation))"
 ```
+
 ![Alt text](./anh_bash3/image-16.png)
+
 **21.2 Difference between double quote and single quote - Sự khác biệt giữa dấu ngoặc kép và dấu ngoặc đơntrích dẫn**
 - Dấu ngoặc kép
 ``` 
@@ -357,5 +383,7 @@ Thuộc tính chung cho cả hai:
 - Ngăn chặn sự nhấp nháy
 - Ngăn tách từ
 VD 
+
 ![Alt text](./anh_bash3/image-17.png)
+
 **21.3 Newlines and control characters - Dòng mới và ký tự điều khiển**

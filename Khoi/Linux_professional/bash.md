@@ -22,7 +22,11 @@ Cách mà được sử dụng phổ biến nhất `./hello.sh``
 `sh hello.sh`
 
 - Tất cả đều được in ra màn hình với kq cuối cùng là `Hello Word`
+
+
 ![Imgur](https://i.imgur.com/BODVbTZ.png)
+
+
 ***1.2 Helloword sử dụng biển**
 
 - Tạo 1 file có tên là hello.sh với nội dung, và cấp quyền thực thi cho file đấy
@@ -40,7 +44,11 @@ Sau khi chạy sẽ in ra dòng Hello,Word
 #!/usr/bin/env bash
 printf "Hello, %s\n" "$1"
 ```
+
+
 ![Imgur](https://i.imgur.com/Dr6uSO3.png)
+
+
 - Câu lệnh đầu tiên không có đối số
 - Câu lệnh thứ 2 đối số bằng một chuỗi
 - Cấu lệnh thứ 3  đối với chuỗi có phân cách nhau bằng dấu cách, đối số $1 chỉ được ứng với 1 chuỗi đầu tiền sau câu lệnh.
@@ -54,7 +62,11 @@ read name
 echo "Hello, $name."
 ```
 - Lệnh `read` ở đây đọc dữ liệu từ đầu vào tiêu chuẩn vào tên biến. Sau đó sử dụng $name và in ra bằng echo
+
+
 ![Imgur](https://i.imgur.com/a0DD4NJ.png)
+
+
 
 - Nếu bạn muốn nối một cái gì đó vào giá trị biến trong khi in nó, hãy sử dụng dấu ngoặc nhọn quanh biến tên như được hiển thị trong ví dụ sau
 ```
@@ -64,7 +76,11 @@ read action
 echo "You are ${action}ing and .... 
 ```
 output:
+
+
 ![Imgur](https://i.imgur.com/qZwd5Yl.png)
+
+
 ***1.4 Tầm quan trong trích dẫn trong chuỗi**
 - Có hai kiểu trích dẫn 
 - Yếu : Sử dụng trích dẫn `"`
@@ -82,11 +98,19 @@ echo "Hello $word"
 word="Word"
 echo 'Hello $word'
 ```
+
+
 ![Imgur](https://i.imgur.com/gSVUwYW.png)
+
+
 ***1.5 Xem thông tin cho Bash tích hợp**
 help [command]: Dùng để xe thông tin, cách sử dụng và các tùy chọn có trong câu lệnh
 ***1.6  Hello World chế độ "Debug"**
+
+
 ![Imgur](https://i.imgur.com/a1s9Vlb.png)
+
+
 Đối số -x cho phép bạn xem qua từng dòng lệnh trong tệp
 vd 2 : 
 ```
@@ -98,7 +122,11 @@ v=$(expr 9 + $adding_string_to_number)
 output
 Thông số đưa vào sẽ không đúng định dạng
 
+
+
 ![Imgur](https://i.imgur.com/KhvCM4H.png)
+
+
 ```
 #!/usr/bin/env bash
 echo "Hello word"
@@ -107,6 +135,8 @@ v=$(expr 9 + $adding_string_to_number)
 ```
 output
 Thông số đưa vào sẽ đúng định dạng
+
+
 ![Imgur](https://i.imgur.com/DUayfQi.png)
 
 
@@ -128,7 +158,11 @@ Có 2 loại chương trình mà kernel biết. Một chương trình nhị phâ
 Nếu một tệp bắt đầu với dòng đầu tiên bằng chuỗi #! thì tiếp theo phải là tên đường dẫn của trình thông dịch.
 
 Nếu kernel đọc được dòng này, nó sẽ gọi trình thông dịch được đặt tên theo tên đường dẫn này và đưa các từ trong dòng làm đối số thông dịch.
+
+
 ![Imgur](https://i.imgur.com/sft2eGP.png)
+
+
 - Sẽ không thực thi được câu lệnh vì trong /usr/bin/evn không có trình thông dịch something, something không thể xử lý được lệnh
 
 
@@ -139,7 +173,11 @@ Nếu kernel đọc được dòng này, nó sẽ gọi trình thông dịch đ�
 `cd -`
 **3.2 Change to the home directory**
 `echo $HOME`
+
+
 ![Imgur](https://i.imgur.com/tCtfaYu.png)
+
+
 **3.3 Thay đổi thư mục của script**
 - Có 2 tool
 1.System tool-Các công cụ hệ thống hoạt động từ thư mục làm việc hiện tại
@@ -155,7 +193,11 @@ liệt kê file có đuôi txt
 `printf "%s\n" *.txt`
 Liệt kê các file có đuôi txt,md,conf, nếu không có file thì dấu * sẽ được hiển thị ở đầu
 `printf "%s\n" *.{txt,md,conf}`
+
+
 ![Imgur](https://i.imgur.com/IRHDnew.png)
+
+
 ### Phần 4 Jobs and Processes
 **4.1 Xử lý công việc**
 - Createing jobs
@@ -168,24 +210,41 @@ Vd : Thực hiện sleep trong vòng 10s .
 Bạn có thể thực hiện một lệnh tiếp theo mà không cần đợi job thực hiện xong bằng tổ hợp phím Ctr + Z. Sử dụng Crl+z sẽ ngưng lại tiến trình
 Background(bg) and foreground(fg)(đặt vấn đề lên trước) a process
 **4.2Killing running jobs**
+
+
 ![Imgur](https://i.imgur.com/8gjtRnz.png)
+
 
 -  Kiểm tra Process đang chạy trên cổng cụ thể
 ` lsof -i :22`
 `lsof -i :80`
+
+
 ![Alt text](./anh_bash//image-2.png)
+
+
 - Tìm kiếm thông tin về một quy trình đang chạy
 `ps aux | grep <search-term>` 
+
+
 ![Alt text](./anh_bash/image-3.png)
 
 **4.3Redirection- Chuyển hướng**
 **Chuyển hướng đầu ra tiêu chuẩn**
 `>` Chuyển hướng đầu ra tiêu chuẩn hay còn được gọi là STDOUT của lệnh hiện tại thành một tệp hoặc một bộ mô tả khác.
+
+
 ![Alt text](./anh_bash/image-4.png/)
+
+
 ![Alt text](./anh_bash/image-5.png)
 **Append vs Truncate**
-`Truncate` > Được thực thi như sau:![Alt text](./anh_bash//image-6.png)
+`Truncate` > Được thực thi như sau:
+
+![Alt text](./anh_bash//image-6.png)
+
 Tạo tệp file nếu nó không tồn tại
+
 Truncate: loại bỏ nội dung của tệp nếu nó tồn tại file
 Ghi nội dung Xin chào vào tệp. Vì nó là nội dung ghi vào sau cùng khi sử dụng `Truncate >`
 `Append >>`
@@ -202,6 +261,7 @@ cat <&3
 ouput STDOUT
 
 ![Alt text](./anh_bash/image-8.png)
+
 Hoặc vd sau cũng chuyển hướng để in ra màn hình 
 ```
 !/bin/bash
@@ -226,10 +286,15 @@ Sau đó, dụng lệnh netcat (nc) để gửi yêu cầu HTTP đến trang web
 
 Cuối cùng, chúng tôi đã in nội dung của biến response ra màn hình bằng lệnh echo.
 - Kết quả chạy
+- 
 ![Alt text](./anh_bash/image-11.png)
+
+
 **Chuyển hướng STDIN**
 `<` đọc từ đối số bên phải và ghi vào đối số bên trái.
+
 ![Alt text](./anh_bash/image-9.png)
+
 ![Alt text](./anh_bash/image-10.png)
 
 ### Phần 5 Control Structures
@@ -255,6 +320,8 @@ File Operators	Details
 **5.1: Thực hiện có điều kiện danh sách lệnh**
 - Mọi lệnh, biểu thức hoặc hàm dựng sẵn, cũng như mọi lệnh hoặc tập lệnh bên ngoài đều có thể được thực thi
 có điều kiện bằng cách sử dụng các toán tử &&(and) và ||(or).
+
+
 ![Alt text](./anh_bash/image-12.png)
 
 - Khi kết hợp nhiều câu lệnh theo cách này, các toán tử không được ưu tiên và Liên kết ngược (left-associative).
@@ -279,6 +346,8 @@ fi
 - Việc dùng `fi` để đóng là bắt buộc, nhưng có thể bỏ qua `elif` hoặc` else` hoặc các mệnh đề khác.
 - Điều quan trọng là phải hiểu rằng dấu ngoặc `[[ `không phải là một phần của cú pháp, nhưng được coi như một lệnh; nó là mã thoát khỏi lệnh này đang được thử nghiệm. Do đó, bạn phải luôn bao gồm khoảng trắng xung quanh dấu ngoặc.
 Chạy file `./test.sh`
+
+
 ![Alt text](./anh_bash/image-14.png)
 
 VD2 : Viết đoạn scrip thực hiện xem đủ tuổi lam viec
@@ -296,6 +365,8 @@ else
     echo "Please enter a valid age."
 fi
 ```
+
+
 ![Alt text](./anh_bash/image-15.png)
 
 VD3 : Các biểu thức toán học cũng trả về 0 hoặc 1 
@@ -306,7 +377,11 @@ else
         echo " $1 la so be hon 86"
 fi
 ```
+
+
 ![Alt text](./anh_bash/image-16.png)
+
+
 **5.2: Câu lệnh for** 
 - Cho phép lặp lại các biến trong một mảng
 ```
@@ -335,6 +410,8 @@ while [ $i -lt ${#arr[@]} ];do
 done
 ```
 ouput :
+
+
 ![Alt text](./anh_bash/image-17.png)
 
 Điểm khác nhau chính là ở cách kiểm tra điều kiện tiếp tục vòng lặp. Đoạn mã thứ nhất sử dụng cấu trúc điều kiện` [ $i -lt ${#arr[@]} ] đ`ể kiểm tra xem biến i có nhỏ hơn số phần tử của mảng arr hay không. Còn đoạn mã thứ hai sử dụng cấu trúc điều kiện `(( $i < ${#arr[@]} ))` để thực hiện công việc tương tự.
@@ -349,7 +426,11 @@ echo $i
 done
 
 ```
+
+
 ![Alt text](./anh_bash/image-18.png)
+
+
 **5.4:  continue and break.** 
 - Continue: bỏ qua các lệnh còn lại bên trong phần thân của vòng lặp đi kèm cho lần lặp hiện tại và chuyển quyền điều khiển chương trình cho lần lặp tiếp theo của vòng lặp.
 
@@ -383,7 +464,11 @@ done
 
 echo 'All Done!'
 ```
+
+
 ![Alt text](./anh_bash/image-20.png)
+
+
 - Đoạn mã trên sử dụng vòng lặp while do để in ra các số từ 1 đến 5 . Cụ thể i = 0; và tăng giá trị lên sau mỗi lần lặp nếu kiểm tra bằng 2 thì nó dừng vòng lặp và in ra 
 **5.5:  Vong lap while.**
 ``` 
@@ -394,7 +479,11 @@ do
         i=$[$i+1]
 done
 ```
+
+
 ![Alt text](./anh_bash/image-21.png)
+
+
 
 **5.6:  Vòng lặp với cú pháp kiểu C.**
 `for (( variable assignment; condition; iteration process ))`
