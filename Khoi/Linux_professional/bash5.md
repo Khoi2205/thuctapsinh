@@ -116,7 +116,7 @@ pingnmap version 1.0.0
 
 **33.1 Kiểm tra cú pháp của tập lệnh với tham số "-n"**
 
-![Alt text](image.png)
+![Alt text](./anh_bash5/image.png)
 
 **33.2Debugging a bash script with "-x" - Gỡ lỗi tập lệnh bash với "-x"**
 - Sử dụng `-x `để kích hoạt debug của các dòng lệnh được thực thi. Nó có thể chạy trên toàn bộ phiên hoặc tệp lệnh, hoặc được bật theo chương trình trong một tập lệnh
@@ -218,7 +218,7 @@ Do đó bảo tồn cả khoảng cách bên trong các đối số và sự tá
 echo "$#"
 ```
 Khi chạy với hai,ba đối số, ví dụ trên sẽ cho kết quả là:
-![Alt text](image-1.png)
+![Alt text](./anh_bash5/image-1.png)
 
 **36.4: $HISTSIZE**
 Số lệnh được nhớ tối đa:
@@ -277,7 +277,7 @@ y
 **36.8: $OLDPWD**
 - OLDPWD chứa thư mục trước lệnh cd cuối cùng :
 
-![Alt text](image-2.png)
+![Alt text](./anh_bash5/image-2.png)
 
 **36.9: $PWD**
 - PWD(PrintWorkingDirectory) Thư mục làm việc hiện tại mà đang làm việc
@@ -416,3 +416,215 @@ braceexpand:emacs:hashall:histexpand:history:interactive-comments:monitor
 ```
 **36.25: $_**
 - Xuất ra trường cuối cùng từ lệnh cuối cùng được thực thi 
+
+
+### 38: Case statement
+**38.1  Câu lệnh trường hợp đơn giản Câu lệnh trường hợp đơn giản**
+- Ở dạng đơn giản nhất được hỗ trợ bởi tất cả các phiên bản của bash , câu lệnh case thực thi trường hợp khớp với mẫu 
+
+Vd có đoạn script sau 
+```
+#!/bin/bash
+
+var=2
+case $var in
+1)
+    echo "myanma"
+    ;;
+2)
+    echo "Brazil"
+    ;;
+3)
+    echo "Cat"
+    ;;
+esac
+
+```
+output 
+`Brazil`
+
+**38.2: Case statement with fall through - Tuyên bố tình huống với sự suy giảm**
+vd 
+```
+#!/bin/bash
+
+var=1
+case $var in
+1)
+    echo "việt nam"
+    ;&
+2)
+    echo "ấn độ"
+    ;&
+3)
+    echo "thái lan"
+    ;&
+esac
+esac
+```
+
+ouput :
+```
+việt nam
+ấn độ
+thái lan
+```
+
+##  40: File execution sequence - Trình tự thực thi tệp
+.bash_profile , .bash_login , .bashrc và .profile đều làm khá giống nhau: thiết lập và định nghĩahàm, biến và sắp xếp.
+
+Sự khác biệt chính là .bashrc được gọi khi mở cửa sổ không đăng nhập nhưng tương tác và.bash_profile và những cái khác được gọi cho một trình bao đăng nhập. Nhiều người có .bash_profile hoặc cách gọi tương tự.bashrc dù sao.
+
+**40.1: .profile so với .bash_profile (và .bash_login)**
+.profile được đọc bởi hầu hết các shell khi khởi động, bao gồm cả bash. Tuy nhiên, .bash_profile được sử dụng cho các cấu hìnhcụ thể cho bash. Đối với mã khởi tạo chung, hãy đặt nó trong tệp .profile . Nếu nó dành riêng cho bash, hãy sử dụng .bash_profile .
+
+.profile không thực sự được thiết kế dành riêng cho bash, thay vào đó , .bash_profile . ( .profile dành cho Bourne vàcác shell tương tự khác, dựa trên bash) Bash sẽ trở lại .profile nếu không tìm thấy .bash_profile .
+
+.bash_login là một dự phòng cho .bash_profile , nếu nó không được tìm thấy. Nói chung tốt nhất nên sử dụng .bash_profile hoặc .profile thay thế
+
+## Chapter 41: Splitting Files - Tách tập tin
+**41.1 Tách tập tin**
+- Chạy lệnh tách mà không có bất kỳ tùy chọn nào sẽ chia 1 tệp thành nhiều tệp riêng biệt có chứa tối đa 1000 dòng
+`split file`
+- Thao tác này sẽ tạo các tệp có tên là xaa,xab,vv
+- Để thay đổi tiền tố thêm tiền tố muốn thay đổi vào cuối dòng lệnh
+
+`split file customprefix`
+- Bây giờ các tệp có tên là customprefixaa , customprefixab , customprefixac , v.v. sẽ được tạo
+
+### Chapter 42: File Transfer using scp - Truyền tệp bằng scp
+**42.1: scp chuyển tệp - scp transferring file**
+Để chuyển tệp một cách an toàn sang máy khác - hãy nhập:
+`scp file1.txt test@server2:$HOME`
+
+- vd trên chuyển file1.txt từ máy chủ sang đến thư mục home của user test của server2
+
+**42.2: scp chuyển nhiều tệp - scp transferring multiple files**
+
+- scp cũng có thể sử dụng để chuyển nhiều tệp từ máy chủ này sang máy chủ khác 
+vd
+`scp /my_folder/*.txt test@server2:$HOME`
+- Tất cả các tệp sẽ được chuyển đến người dùng test thư mục home.
+**42.3: Tải xuống tệp bằng scp - Downloading file using scp**
+Để tải tệp từ máy chủ từ xa xuống máy cục bộ - hãy nhập:
+
+`scp test@server2:$HOME/file.txt /local/machine/path/`
+
+## Chapter 43: Pipelines - Đường ống
+**43.1: Sử dụng |& - Using |&**
+- |& kết nối đầu ra tiêu chuẩn và lỗi tiêu chuẩn của lệnh đầu tiên với lệnh thứ 2 trong khi | chỉ kết nối đầu ra tiêu chuẩn của lệnh đầu tiên đến lệnh thứ 2    
+- Trong ví dụ này, trang được tải xuống qua curl . với tùy chọn -v curl viết một số thông tin trên stderr bao gồm,trang tải xuống được viết trên stdout . Tiêu đề của trang có thể được tìm thấy giữa <title> và </title> .
+
+```
+curl -vs 'http://www.facebook.com/' |& awk '/Host:/{print}
+/<title>/{match($0,/<title>(.*)<\/title>/,a);print a[1]}'
+```
+
+output: 
+```
+Host: www.facebook.com
+Facebook
+```
+- Còn đối với `|` thông tin sẽ được gửi đến stderr vì chỉ stdout được chuyển đến lệnh tiếp theo , trong vd trên tất cả dòng ngoại trừ dòng cuối cùng facebook đã được gửi đên stderr theo url
+
+vd 
+```
+curl -vs 'http://www.facebook.com/' | awk '/Host:/{print}
+\/<title>/{match($0,/<title>(.*)<\/title>/,a);print a[1]}'
+```
+
+output: 
+
+![Alt text](./anh_bash5/image-3.png)
+
+
+**43.2: Hiển thị tất cả các quy trình được phân trang - Show all processes paginated**
+`ps -e | less`
+- Hiển thị tất cả các quá trình , đầu ra của nó được kết nối với đầu vào nhiều hơn thông qua `|` ,less phân trang kết quả hơn
+
+## Chapter 45: Word splitting - Tách từ
+**45.1: Cái gì, khi nào và tại sao? - What, when and Why?**
+- Khi shell thực hiện mở rộng tham số ,thay thế lệnh ,mở rộng biến hoặc số học nó sẽ quét các ranh giới từ trong kết quả , nếu tìm thấy bất kỳ danh giới nào thì kết quả được chia thành nhiều từ tại vị trí đó .Giá trị mặc định cho IFSlà dấu cách, tab và dòng mới, tức là việc tách từ sẽ xảy ra trên ba ký tự khoảng trắng này nếu không được ngăn chặnmột cách rõ ràng.
+Sử dụng câu lệnh `set` để dặt hoặc bỏ đặt các giá trị của các tùy chọn shell và tham số vị trí. Bạn có thể thay đổi giá trị của các thuộc tính shell và tham số vị hoặc hiển thị tren và giá trị của các biến shell bằng lệnh `set`
+
+vidu 
+```
+set -x
+var='I am
+a
+multiline string'
+fun() {
+ echo "-$1-"
+ echo "*$2*"
+ echo ".$3."
+}
+fun $var
+```
+
+output
+
+![Alt text](./anh_bash5/image-4.png)
+
+
+**45.2: Tính hữu dụng của việc tách từ
+
+Lặp các từ được phân tách bằng dấu cách:
+```
+words='foo bar baz'
+for w in $words;do
+ echo "W: $w"
+done
+```
+output:
+
+![Alt text](./anh_bash5/image-5.png)
+
+**45.3 Phân tách các thay đổi vè dấu cách.**
+Thực hiện thay thế đơn giản các dấu phân cách từ khoảng trắng sang dòng mới
+```
+arr='1 2 3 4'
+[root@localhost ~]# echo $arr | tr " " "\n"
+1
+2
+3
+4
+```
+Nó tách giá trị và hiển thị nó từng dòng một.
+
+**45.4 Phân tách với IFS**
+- Tạo tệp hello  với nội dung
+
+```
+#!/usr/bin/env bash
+printf "%d args:" $#
+printf " <%s>" "$@"
+echo
+```
+- Xem sự khác biệt
+```
+./hello.sh $var
+4 args: <This> <is> <an> <example>
+```
+$var được chia thành 4 args. IFS là các ký tự khoảng trắng và do đó việc tách từ xảy ra trong khoảng trắng.
+```
+var="This/is/an/example"
+[root@localhost ~]# ./hello.sh $var
+```
+Ở trên không xảy ra tách từ vì không tìm thấy ký tự IFS.
+
+G đặt IFS 
+```
+ IFS=/
+[root@localhost ~]# var="This/is/an/example"
+[root@localhost ~]# ./hello.sh $var
+4 args: <This> <is> <an> <example>
+```
+## Chapter 48: Chain of commands and operations - Chuỗi lệnh vàhoạt động
+**48.1: Đếm tỷ lệ xuất hiện của một mẫu văn bản - Counting a text pattern ocurrence**
+- Sử dụng một pipe làm đầu ra của một lệnh trở thành đầu vào của lệnh tiếp theo
+
+`ls -1 | grep -c ".conf"`
+Trong trường hợp này, đầu ra của lệnh ls được sử dụng làm đầu vào của lệnh grep. Kết quả sẽ là sốtrong số các tệp có ".conf" trong tên của chúng.
+**48.2: chuyển đầu ra cmd gốc sang tệp người dùng - transfer root cmd output to user file**
+Cmd tee: đọc thông tin nhập vào và viết ra kết quả vào files.
+`su -c <cmd> | tee ~/results-of-cmd.txt`
