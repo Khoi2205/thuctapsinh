@@ -2,7 +2,7 @@
 ### Hello Word
 1. Interactive Shell
 - Interactive shell là một chương trình dòng lệnh (command-line interface) cho phép bạn tương tác với hệ thống máy tính của mình thông qua việc nhập các lệnh và nhận kết quả trực tiếp từ hệ thống. Với interactive shell, bạn có thể thực hiện nhiều tác vụ khác nhau trên hệ thống của bạn, từ việc di chuyển giữa các thư mục đến thực thi các ứng dụng và chương trình. Interactive shell thường được sử dụng trong các hệ thống Unix và Linux, và là công cụ rất hữu ích cho các lập trình viên và nhà quản trị hệ thống.
-![Imgur](https://i.imgur.com/gNjNe34.png)
+ ![Imgur](https://i.imgur.com/gNjNe34.png)
 - Lệnh `echo` : Ghi các đối số mà nó nhận được vào đầu ra tiêu chuẩn 
 ***1.1 Shell không tương tác**
 Shell Bash cũng có thể được chạy không tương tác từ một tập lệnh, làm cho shell không yêu cầu tương tác của con người.Hành vi tương tác và hành vi theo kịch bản phải giống hệt nhau - một cân nhắc thiết kế quan trọng của Unix V7.Vỏ Bourne và Bash chuyển tiếp. Do đó, bất cứ điều gì có thể được thực hiện tại dòng lệnh đều có thể được đưa vào tập lệnh tập tin để tái sử dụng
@@ -24,7 +24,7 @@ Cách mà được sử dụng phổ biến nhất `./hello.sh``
 - Tất cả đều được in ra màn hình với kq cuối cùng là `Hello Word`
 
 
-![Imgur](https://i.imgur.com/BODVbTZ.png)
+ ![Imgur](https://i.imgur.com/BODVbTZ.png)
 
 
 ***1.2 Helloword sử dụng biển**
@@ -46,7 +46,7 @@ printf "Hello, %s\n" "$1"
 ```
 
 
-![Imgur](https://i.imgur.com/Dr6uSO3.png)
+ ![Imgur](https://i.imgur.com/Dr6uSO3.png)
 
 
 - Câu lệnh đầu tiên không có đối số
@@ -64,7 +64,7 @@ echo "Hello, $name."
 - Lệnh `read` ở đây đọc dữ liệu từ đầu vào tiêu chuẩn vào tên biến. Sau đó sử dụng $name và in ra bằng echo
 
 
-![Imgur](https://i.imgur.com/a0DD4NJ.png)
+ ![Imgur](https://i.imgur.com/a0DD4NJ.png)
 
 
 
@@ -78,7 +78,7 @@ echo "You are ${action}ing and ....
 output:
 
 
-![Imgur](https://i.imgur.com/qZwd5Yl.png)
+ ![Imgur](https://i.imgur.com/qZwd5Yl.png)
 
 
 ***1.4 Tầm quan trong trích dẫn trong chuỗi**
@@ -100,7 +100,7 @@ echo 'Hello $word'
 ```
 
 
-![Imgur](https://i.imgur.com/gSVUwYW.png)
+ ![Imgur](https://i.imgur.com/gSVUwYW.png)
 
 
 ***1.5 Xem thông tin cho Bash tích hợp**
@@ -108,7 +108,7 @@ help [command]: Dùng để xe thông tin, cách sử dụng và các tùy chọ
 ***1.6  Hello World chế độ "Debug"**
 
 
-![Imgur](https://i.imgur.com/a1s9Vlb.png)
+ ![Imgur](https://i.imgur.com/a1s9Vlb.png)
 
 
 Đối số -x cho phép bạn xem qua từng dòng lệnh trong tệp
@@ -124,7 +124,7 @@ Thông số đưa vào sẽ không đúng định dạng
 
 
 
-![Imgur](https://i.imgur.com/KhvCM4H.png)
+ ![Imgur](https://i.imgur.com/KhvCM4H.png)
 
 
 ```
@@ -137,7 +137,7 @@ output
 Thông số đưa vào sẽ đúng định dạng
 
 
-![Imgur](https://i.imgur.com/DUayfQi.png)
+ ![Imgur](https://i.imgur.com/DUayfQi.png)
 
 
 
@@ -160,7 +160,7 @@ Nếu một tệp bắt đầu với dòng đầu tiên bằng chuỗi #! thì t
 Nếu kernel đọc được dòng này, nó sẽ gọi trình thông dịch được đặt tên theo tên đường dẫn này và đưa các từ trong dòng làm đối số thông dịch.
 
 
-![Imgur](https://i.imgur.com/sft2eGP.png)
+ ![Imgur](https://i.imgur.com/sft2eGP.png)
 
 
 - Sẽ không thực thi được câu lệnh vì trong /usr/bin/evn không có trình thông dịch something, something không thể xử lý được lệnh
@@ -175,7 +175,7 @@ Nếu kernel đọc được dòng này, nó sẽ gọi trình thông dịch đ�
 `echo $HOME`
 
 
-![Imgur](https://i.imgur.com/tCtfaYu.png)
+ ![Imgur](https://i.imgur.com/tCtfaYu.png)
 
 
 **3.3 Thay đổi thư mục của script**
@@ -195,7 +195,7 @@ Liệt kê các file có đuôi txt,md,conf, nếu không có file thì dấu * 
 `printf "%s\n" *.{txt,md,conf}`
 
 
-![Imgur](https://i.imgur.com/IRHDnew.png)
+ ![Imgur](https://i.imgur.com/IRHDnew.png)
 
 
 ### Phần 4 Jobs and Processes
@@ -212,7 +212,7 @@ Background(bg) and foreground(fg)(đặt vấn đề lên trước) a process
 **4.2Killing running jobs**
 
 
-![Imgur](https://i.imgur.com/8gjtRnz.png)
+ ![Imgur](https://i.imgur.com/8gjtRnz.png)
 
 
 -  Kiểm tra Process đang chạy trên cổng cụ thể
@@ -220,28 +220,28 @@ Background(bg) and foreground(fg)(đặt vấn đề lên trước) a process
 `lsof -i :80`
 
 
-![Alt text](./anh_bash//image-2.png)
+ ![Alt text](./anh_bash//image-2.png)
 
 
 - Tìm kiếm thông tin về một quy trình đang chạy
 `ps aux | grep <search-term>` 
 
 
-![Alt text](./anh_bash/image-3.png)
+ ![Alt text](./anh_bash/image-3.png)
 
 **4.3Redirection- Chuyển hướng**
 **Chuyển hướng đầu ra tiêu chuẩn**
 `>` Chuyển hướng đầu ra tiêu chuẩn hay còn được gọi là STDOUT của lệnh hiện tại thành một tệp hoặc một bộ mô tả khác.
 
 
-![Alt text](./anh_bash/image-4.png/)
+ ![Alt text](./anh_bash/image-4.png/)
 
 
-![Alt text](./anh_bash/image-5.png)
+ ![Alt text](./anh_bash/image-5.png)
 **Append vs Truncate**
 `Truncate` > Được thực thi như sau:
 
-![Alt text](./anh_bash//image-6.png)
+ ![Alt text](./anh_bash//image-6.png)
 
 Tạo tệp file nếu nó không tồn tại
 
@@ -250,7 +250,7 @@ Ghi nội dung Xin chào vào tệp. Vì nó là nội dung ghi vào sau cùng k
 `Append >>`
 - Tạo file được chỉ định nếu nó không tồn tại
 - Append- nối tệp(ghi vào cuối tệp)
-![Alt text](./anh_bash/image-7.png)
+ ![Alt text](./anh_bash/image-7.png)
 **Chuyển hướng đầu đến các địa chỉ mạng**
 Bash coi một số đường dẫn là đặc biệt và có thể thực hiện một só giao tiếp mạng bằng cách viết vào `/dev/{udp|tcp}/host/port` . Bash không thể thiết lập một máy chủ để lắng nghe, nhưng có thể bắt đầu kết nối và đối với TCP thì có thể đọc được kết quả. Lệnh `exec` khi sử dụng sẽ không nhận được STDOUT.
 ```
@@ -260,7 +260,7 @@ cat <&3
 ```
 ouput STDOUT
 
-![Alt text](./anh_bash/image-8.png)
+ ![Alt text](./anh_bash/image-8.png)
 
 Hoặc vd sau cũng chuyển hướng để in ra màn hình 
 ```
@@ -287,15 +287,15 @@ Sau đó, dụng lệnh netcat (nc) để gửi yêu cầu HTTP đến trang web
 Cuối cùng, chúng tôi đã in nội dung của biến response ra màn hình bằng lệnh echo.
 - Kết quả chạy
 - 
-![Alt text](./anh_bash/image-11.png)
+ ![Alt text](./anh_bash/image-11.png)
 
 
 **Chuyển hướng STDIN**
 `<` đọc từ đối số bên phải và ghi vào đối số bên trái.
 
-![Alt text](./anh_bash/image-9.png)
+ ![Alt text](./anh_bash/image-9.png)
 
-![Alt text](./anh_bash/image-10.png)
+ ![Alt text](./anh_bash/image-10.png)
 
 ### Phần 5 Control Structures
 **Các tham số dùng để kiểm tra hoặc test**
@@ -322,11 +322,11 @@ File Operators	Details
 có điều kiện bằng cách sử dụng các toán tử &&(and) và ||(or).
 
 
-![Alt text](./anh_bash/image-12.png)
+ ![Alt text](./anh_bash/image-12.png)
 
 - Khi kết hợp nhiều câu lệnh theo cách này, các toán tử không được ưu tiên và Liên kết ngược (left-associative).
 `cat file  && pwd || echo "No such directory`
-![Alt text](./anh_bash/image-13.png)
+ ![Alt text](./anh_bash/image-13.png)
 - Nếu thực hiện `cat` thành công thì sẽ thực hiện `pwd `và không thực hiện echo
 - Nếu `cat` file không thành công thực hiện lệnh `echo`
 
@@ -348,7 +348,7 @@ fi
 Chạy file `./test.sh`
 
 
-![Alt text](./anh_bash/image-14.png)
+ ![Alt text](./anh_bash/image-14.png)
 
 VD2 : Viết đoạn scrip thực hiện xem đủ tuổi lam viec
 ```
@@ -367,7 +367,7 @@ fi
 ```
 
 
-![Alt text](./anh_bash/image-15.png)
+ ![Alt text](./anh_bash/image-15.png)
 
 VD3 : Các biểu thức toán học cũng trả về 0 hoặc 1 
 ```
@@ -379,7 +379,7 @@ fi
 ```
 
 
-![Alt text](./anh_bash/image-16.png)
+ ![Alt text](./anh_bash/image-16.png)
 
 
 **5.2: Câu lệnh for** 
@@ -412,7 +412,7 @@ done
 ouput :
 
 
-![Alt text](./anh_bash/image-17.png)
+ ![Alt text](./anh_bash/image-17.png)
 
 Điểm khác nhau chính là ở cách kiểm tra điều kiện tiếp tục vòng lặp. Đoạn mã thứ nhất sử dụng cấu trúc điều kiện` [ $i -lt ${#arr[@]} ] đ`ể kiểm tra xem biến i có nhỏ hơn số phần tử của mảng arr hay không. Còn đoạn mã thứ hai sử dụng cấu trúc điều kiện `(( $i < ${#arr[@]} ))` để thực hiện công việc tương tự.
 
@@ -428,7 +428,7 @@ done
 ```
 
 
-![Alt text](./anh_bash/image-18.png)
+ ![Alt text](./anh_bash/image-18.png)
 
 
 **5.4:  continue and break.** 
@@ -447,7 +447,7 @@ done
 
 echo 'All Done!'
 ```
-![Alt text](./anh_bash/image-19.png)
+ ![Alt text](./anh_bash/image-19.png)
 - Đoạn mã trên sử dụng vòng lặp while do để in ra các số từ 1 đến 5 . Cụ thể i = 0; và tăng giá trị lên sau mỗi lần lặp nếu kiểm tra bằng 2 thì nó tiếp tục vòng lặp và không in ra số 2
 
 **break:** lệnh kết thúc vòng lặp hiện tại và chuyển điều quyền điều khiển chương trình cho lệnh sau vòng lặp kết thúc. Nó được sử dụng để thoát vòng lặp for, while , until, select.
@@ -466,7 +466,7 @@ echo 'All Done!'
 ```
 
 
-![Alt text](./anh_bash/image-20.png)
+ ![Alt text](./anh_bash/image-20.png)
 
 
 - Đoạn mã trên sử dụng vòng lặp while do để in ra các số từ 1 đến 5 . Cụ thể i = 0; và tăng giá trị lên sau mỗi lần lặp nếu kiểm tra bằng 2 thì nó dừng vòng lặp và in ra 
@@ -481,7 +481,7 @@ done
 ```
 
 
-![Alt text](./anh_bash/image-21.png)
+ ![Alt text](./anh_bash/image-21.png)
 
 
 
@@ -496,7 +496,7 @@ do
 done
 ```
 
-![Alt text](./anh_bash/image-22.png)
+ ![Alt text](./anh_bash/image-22.png)
 **5.6: Switch statement with case.**
 - Đối với case statement bạn có thể so khớp giá trị với một biến
 - Đối số được truyền vào case được mở rộng và gắp khớp với từng mẫu.
@@ -529,4 +529,4 @@ echo "thank"
 
 ```
 output:
-![Alt text](./anh_bash/image-23.png)
+ ![Alt text](./anh_bash/image-23.png)

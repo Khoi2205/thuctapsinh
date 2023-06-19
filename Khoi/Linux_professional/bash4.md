@@ -3,7 +3,7 @@
 **22.1 Kiểm tra loại tệp**
 - Tham số -e kiểm tra có điều kiện khai thác xem một tập tin 
 ```
-if [[ -e $filename ]]; then
+if [[ -e $filename ]]; thenf
 echo "$filename exits"
 fi
 ```
