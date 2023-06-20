@@ -1,4 +1,4 @@
-## Chaper 31 -> 
+## Chaper 31 -> 48
 ### 31.Brace Expansion
 **31.1 Sửa đổi phần tệp mở rộng**
 - Sử dụng câu lệnh mv và thêm đuôi .{jar,zip}
