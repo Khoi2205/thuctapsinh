@@ -21,7 +21,7 @@ NetBox là một phần mềm mã nguồn mở được sử dụng để quản
 ![Alt text](image.png)
  
 
- ![Alt text](image-10.png)
+
 
     
 - Trong đó:
@@ -155,6 +155,114 @@ Height : Được tính bằng U, tủ của mình có chiều cao là 42U.
 ***Cables***
 - NetBox mô hình cáp như các kết nối giữa các loại thành phần thiết bị nhất định và các đối tượng khác. Mỗi cáp có thể được chỉ định một loại, màu sắc, chiều dài và nhã
 
+Thực hành tạo device .
+
+**Tạo Manufacturers(tạo nhà sản xuất)**
+
+![Alt text](image-21.png)
+
+
+![Alt text](image-22.png)
+
+
+- Đây là kq sau khi tạo xong 
+
+![Alt text](image-23.png)
+
+
+Trong đó : 
+
+`Name:` Đặt tên đúng với tên của hãng hoặc tên viết tắt của hãng
+`slug`: Có thể để tự sinh ra hoặc tạo 1 url trông gọn gàng hơn nếu quá dài.
+`Description` : Mô tả cho manufacturer
+
+
+**Tiếp theo tạo Device Types**
+
+
+- Device Types đại diện cho kích thước , kiểu dáng phần cứng cụ thể trong thực tế ,  Các device type xác định thuộc tính của thiết bị 
+- Tạo 1 device types
+
+
+![Alt text](image-24.png)
+
+
+![Alt text](image-25.png)
+
+
+Kết quả sau khi tạo xong: 
+
+![Alt text](image-26.png)
+
+
+Trong đó:
+`Manufacturer` : Tên hãng tạo ra thiết bị 
+`Model` : Đặt tên cho kiểu thiết bị 
+`Height (U)`: Chiếm bao nhiêu `u` trong tủ rack 
+
+Tạo các interface ,Power Ports cho thiết bị 
+
+![Alt text](image-30.png)
+
+![Alt text](image-31.png)
+
+- Trong đó 
+`Name` : Đặt tên là power 1 ( nguồn 1)
+`Type` : Đối với Switch của mình là chân C14.
+`Maximum draw`: Mức tiêu thụ năng lượng tối đa mình tạm thời để là 30w
+`Allocated draw` : Mức tiêu thụ điện năng bình thường là 4w
+
+
+![Alt text](image-32.png)
+
+![Alt text](image-33.png)
+
+
+- *Tạo tương tự với server (lưu ý server cần đổi và chọn lại interface)*
+
+
+**Device Roles**
+
+- Nhập vai trò của các core swith,server,...
+
+
+![Alt text](image-28.png)
+
+![Alt text](image-27.png)
+
+
+- kết quả sau khi tạo
+
+![Alt text](image-29.png)
+
+
+- Trong đó 
+
+`Name` : Đặt tên cho role này
+`Color` : Chọn màu cho device role này.
+`Description` : Bạn có thể thêm mô tả thêm cho device role này. Phần này mình không có mô tả gì thêm
+
+- Thêm thiết bị vào tủ Rack(Có 2 cách)
+
+![Alt text](image-35.png)
+![Alt text](image-36.png)
+![Alt text](image-37.png)
+![Alt text](image-34.png)
+
+
+- Kết quả sau khi thêm 
+
+
+![Alt text](image-38.png)
+
+- Trong đó 
+
+`Device` : Phần này sẽ nhập vào tên của thiết bị và loại thiết bị. Lưu ý rằng tên thiết bị trong 1 rack không thể trùng với nhau
+`Hardware` : CHọn nhà sản xuất thiết bị, Kiểu của thiết bị. Nhập vào Serial number và Asset tag. Nếu chưa có thông tin có thể bỏ qua.
+`Location` : Chọn site và rack sẽ đặt thiết bị. Position sẽ chọn vị trí (U) của thiết bị trên racks.
+
+
+
 **Power Tracking**
 
 Là một phần của bộ tính năng DCIM, NetBox hỗ trợ mô hình hóa năng lượng của cơ sở dưới dạng các bảng nguồn và nguồn cấp dữ liệu riêng biệt. Chúng được sử dụng phổ biến nhất để lập tài liệu phân phối điện trong trung tâm dữ liệu, nhưng cũng có thể phục vụ các môi trường truyền thống hơn.
@@ -191,6 +299,85 @@ vd một hệ thống phân cấp
 
 ***VRF Tracking***
 NetBox hỗ trợ mô hình hóa các phiên bản định tuyến và chuyển tiếp ảo (VRF) rời rạc để biểu diễn nhiều bảng định tuyến, bao gồm cả những bảng có không gian địa chỉ chồng chéo. Mỗi loại đối tượng IP trong một tập hợp - tiền tố, dải IP và địa chỉ IP - có thể được gán cho một VRF cụ thể
+
+Thực hành tạo IPAM trong netbox
+
+***- Bước 1 : Tạo Vlan group ***
+
+![Alt text](image-39.png)
+![Alt text](image-42.png)
+![Alt text](image-40.png)
+
+- Trong đó
+`Name`  : Đặt tên cho Vlan Group
+Chọn `DCIM > site` để chỉ định site mà VLAN Group này thuộc về
+Chọn `Region` tương ứng với Site định đặt VLAN Group
+Chọn `Site` mà VLAN Group này thuộc về
+
+Sau khi hoàn tất click vào nút `create`,Kết quả sau khi tạo
+
+![Alt text](image-43.png)
+
+***VLANs***
+- Tạo ra các VLAN , những vlan có chung mục đích sử dụng có thể nhóm vào 1 nhóm vlan group 
+
+Tạo 1 VLAN như sau:
+
+![Alt text](image-44.png)
+![Alt text](image-45.png)
+
+- Trong đó : 
+
+`ID, Name` : Nhập ID và tên vlan 
+`Status`  : Trạng thái hiện thời
+`Site` : đang được đặt trên site nào
+
+***VRF***
+- Mỗi VRF về cơ bản là 1 bảng đinh tuyến riêng. VRF thường được sử dụng để ngăn cách các khách hàng và các tổ chức với nhau trong mạng.
+
+***Aggregates***
+
+RIRs (Regional Internet Registries)
+- Chịu trách nhiệm phân bổ không gian địa chỉ IP , có 5 RIRs :  ARIN, RIPE, APNIC, LACNIC và AFRINIC.
+
+![Alt text](image-46.png)
+
+*Aggregates*
+- Sử dụng để xác định 1 dải địa chỉ IP lớn , phân bổ cao nhất 
+
+![Alt text](image-47.png)
+
+
+`Prefix` : Nhập vào dải địa chỉ lớn nhất
+`Rir` : Cơ quan đăng ký Internet (Phần này đã tạo trước đó, kích xuống dưới và chọn Cơ quan đăng ký)
+`Date added` : Chọn ngày khởi tạo.
+`Description` : Nhập vào mô tả cho phần này hoặc để trống.
+
+***Prefixes***
+Nhập vào địa chỉ mạng và subnet của dải địa chỉ để cấp cho các thiết bị
+
+Prefix có các Status sau:
+
+`Container` : Tóm tắt về prefix con
+`Active` : Đang hoạt động
+`Reserved` : Chỉ định sử dụng trong tương lai
+`Deprecated` : Không còn sử dụng
+
+
+![Alt text](image-48.png)
+
+
+***IP addresses***
+
+- Chú ý đến 2 trường sau 
+
+![Alt text](image-49.png)
+
+Trường `New IP` sử dụng để tạo mới từng địa chỉ IP 1. Thường sử dụng để tạo các địa chỉ là Gateway hoặc tạo các địa chỉ Nat. Trường thứ 2 là `Bulk Create` sử dụng để tạo hàng loạt các địa chỉ ip.
+
+
+![Alt text](image-51.png)
+![Alt text](image-50.png)
 
 
 **VLAN Management**
@@ -283,4 +470,51 @@ Vai trò liên hệ xác định mối quan hệ của một liên hệ với m�
 Một liên hệ phải đại diện cho một cá nhân hoặc điểm liên lạc lâu dài.
 
 
+
+**Hướng dẫn kết nối các thiết bị**
+- Tạo kết nối từ server tới switch ,cần tạo interface cho thiết bị 
+
+
+![Alt text](image-52.png)
+![Alt text](image-53.png)
+
+![Alt text](image-54.png)
+
+
+- Gán địa chỉ IP
+
+![Alt text](image-55.png)
+
+![Alt text](image-56.png)
+
+
+Gán switch, fortinet cũng tương tự
+
+**Tenancy**
+- Hầu hết các đối tượng được liên kết đều được hỗ trợ người thuê , Liên kết của một đối tượng thuê cụ thể truyền đạt quyền sở hữu
+- 
+![Alt text](image-57.png)
+
+
+***Tenant Groups***
+- Đối tượng được thuê theo nhóm , Và các nhóm lồng vào nhau một cách đệ quy linh hoạt tối đa
+***Tenants***
+- Đại diện cho khách hàng hoặc một tổ chức 
+Chỉ định người thuê được sử dụng để biểu thị quyền sở hữu đối tượng trong NetBox
+
+
+
+**Power:**
+`Power Panel`: Quản lý các tủ điện và các thông tin liên quan.
+`Power Feed`: Quản lý các nguồn cấp điện cho các thiết bị mạng.
+
+
+`Console ports`:cổng vật lý trên thiết bị cho phép bạn kết nối cáp đầu cuối hoặc bảng điều khiển để truy cập giao diện dòng lệnh (CLI) của thiết bị cho mục đích cấu hình và quản lý
+`Console server ports`Cổng này tương tự như cổng bảng điều khiển, nhưng chúng thường được sử dụng để kết nối với máy chủ bảng điều khiển, cung cấp quyền truy cập từ xa vào giao diện CLI của nhiều thiết bị từ một vị trí.
+`Power ports:`Cổng được sử dụng để cấp nguồn cho thiết bị, thường ở dạng bộ điều hợp nguồn AC hoặc DC.
+`Power outlets`:Đây là những ổ cắm điện nơi bạn có thể cắm dây nguồn để cung cấp điện cho thiết bị.
+`Front ports`: Cổng phía trước của thiết bị 
+`Rear ports`: Đây là các cổng vật lý ở mặt sau của thiết bị, thường được sử dụng để kết nối cáp mạng hoặc các thiết bị ngoại vi khác.
+`Module bays:` Đây là các khe hoặc ngăn bên trong thiết bị nơi bạn có thể lắp đặt các thiết bị bổ sung, chẳng hạn như ổ đĩa cứng hoặc ổ đĩa quang.
+`Inventory items` :Những mục được theo dõi trong hệ thống kiểm kê, chẳng hạn như thiết bị mạng, máy chủ hoặc tài sản CNTT khác. Mục đích của việc theo dõi hàng tồn kho là để theo dõi những tài sản bạn có, vị trí của chúng và trạng thái hiện tại của chúng, điều này có thể giúp bảo trì và khắc phục sự cố.
 
