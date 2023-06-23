@@ -1,7 +1,7 @@
-## NetBox
-### 1. Định nghĩa 
+# NetBox
+## 1. Định nghĩa 
 NetBox là một phần mềm mã nguồn mở được sử dụng để quản lý hạ tầng mạng, bao gồm các thiết bị mạng, địa chỉ IP, subnet, tài liệu kỹ thuật và các thông tin khác liên quan đến hệ thống mạng.(Quản lý các thiết bị trên IDC)
-### 2.Chức năng chính của NetBox
+## 2.Chức năng chính của NetBox
 - Xây dựng phục vụ đặc biệt nhu cầu của các kỹ sư và nhà khai thác mạng
 + Quản lý địa chỉ IP
 + Tự động cung câp tiền tố /IP khả dụng tiếp theo
@@ -14,66 +14,39 @@ NetBox là một phần mềm mã nguồn mở được sử dụng để quản
 + Báo cáo tùy chỉnh và tập lệnh có thể thực thi trực tiếp trong giao diện người dùng
 + Khung bổ trợ mở rộng để thêm chức năng tùy chỉnh
 + Ghi nhật ký thay đổi chi tiết tự động
-### 3. Giới thiệu chi tiết
+## 3. Giới thiệu chi tiết
+
 **Mô hình facilities**
 
 
-![Alt text](image.png)
+![Alt text](./anh/image.png)
  
 
 
+### 3.1 Giới thiệu chi tiết sites
 
-    
-- Trong đó:
-***Regions***
-- Vùng đại diện cho các miền địa lý ,thường được sử dụng để mô hình hóa các miền , quốc gia 
-***Site Groups***
-- Giống như các vùng , các nhóm trang web có thể được sắp xếp theo cấu trúc đệ quy 
-vd: Có thể phân chia loại trang web là trang web công ty,chi nhánh , hoặc khách hàng
-***Site***
-- Một site thường đại diện cho một tòa nhà trong một vùng và/hoặc nhóm site.
-***Location***
-  - Vị trí có thể là phân khu hợp lý nào trong tầng hoặc phòng.Giống như các vùng và nhóm trang, các vị trí có thể được lồng vào một hệ thống phân cấp tự đệ quy để có tính linh hoạt tối đa. Và giống như các
-***Racks***
-Mỗi rack thì được gán cho 1 site, chiều cao của rack được đo bằng đơn vị U. Các racks thường cao từ 42 U đến 48 U nhưng trong netbox ta có thể chỉ định chiều cao của rack tùy ý. Mỗi rack được gán 1 tên và 1 id cơ sở riêng(tùy chọn).
-
-***Phần Organization trên NetBox***
-
-![Alt text](image-11.png)
-
-- Phần này được sử dụng để khai báo các đối tượng khác hàng , vị trí địa lý của trung tâm dữ liệu và vị trí đặt tủ rack
-
-Thường đặt tạo 1 tủ rack thì đặt tên nhóm khác hàng và command vai trò đối với các device 
+- Trong site sẽ có 
 
 
-
-- Tenancy
-Trước khi tạo Racks và Sites thì tạo nhóm khách hàng trước và các khách hàng sẽ có chúc năng với các thiết bị
-
-Ví dụ về tạo Tenacy
-
-![Alt text](image-13.png)
+![Alt text](./anh/image-58.png)
 
 
+* ***Regions*** - Vùng đại diện cho các miền địa lý ,thường được sử dụng để mô hình hóa các miền , quốc gia 
+  * vd: Miền bắc
+* ***Site Groups*** - Giống như các vùng , các nhóm trang web có thể được sắp xếp theo cấu trúc đệ quy. Có thể phân chia loại trang web là trang web công ty,chi nhánh , hoặc khách hàng
+  * vd: VNPT,VT,FPT
+* ***Site*** - Một site thường đại diện cho một tòa nhà trong một vùng và/hoặc nhóm site.
+vd: VNPT_IDC nam thăng long 
+* **Location** - .Giống như các vùng và nhóm trang, các vị trí có thể được lồng vào một hệ thống phân cấp tự đệ quy để có tính linh hoạt tối đa
+* vd: IDC_Nam thăng long  tầng 2 (site ở Nam thăng long)
 
-- Sau đó điền thông tin cho tenacy 
 
-![Alt text](image-14.png)
-
-```
-1. Đặt tên cho tenancy
-2. Mô tả chi tiết cho tenancy này.
-3. Chọn Create để tạo
-```
-Tiếp theo là **Sites**
  
 Trong site sẽ có Regions,Site,Site Group,Location
 ***Regions***
+- Tạo 1 region
 
-Vùng đại diện cho các miền địa lý ,thường được sử dụng để mô hình hóa các miền , quốc gia .Giả sử có 2 khu vực là Hà đông và Hà Nội thì khu vực Hà nội có thể sử dụng làm parent của Hà Đông,Trước tiên tạo 1 regions Hà Nội
-
-
-![Alt text](image-15.png)
+![Alt text](./anh/image-15.png)
 
 
 ```
@@ -88,7 +61,7 @@ Tiếp theo sẽ tạo ra 1 regions có tên là Hà Đông, thuộc địa ph�
 - Sau khi tạo sẽ có kết quả như sau 
 
 
-![Alt text](image-16.png)
+![Alt text](./anh/image-16.png)
 
 
 ***Site***
@@ -97,9 +70,9 @@ Tiếp theo sẽ tạo ra 1 regions có tên là Hà Đông, thuộc địa ph�
 Ta tạo Site như sau:
 
 
-![Alt text](image-17.png)
+![Alt text](./anh/image-17.png)
 
-![Alt text](image-18.png)
+![Alt text](./anh/image-18.png)
 
 
 
@@ -107,15 +80,35 @@ Ta tạo Site như sau:
 `Name:` Đặt tên là VIETTELCO Center
 Region: Vị trí đặt tòa nhà là ở Hà Đông nên add vào region Hà đông
 Facility: Đặt là VIETTELCO_IDC
-Time zone: Ở Việt Nam nên ta sẽ chọn timezone là Asia/Ho Chi Minh
+T./anh/ime zone: Ở Việt Nam nên ta sẽ chọn t./anh/imezone là Asia/Ho Chi Minh
 Description : Ở mục này để ta điền thông tin liên hệ của data center đang khai báo.
 
+***Site_Group***
 
-Xong phần site , tiếp theo đến tạo phần Racks
-***Racks***
+![Alt text](./anh/image-64.png)
 
-Rack Roles
-Rack role được sử dụng để miêu tả vai trò của tủ racks, ta có thể đặt cho nó vai trò như sử dụng cho khách hàng hoặc để lưu trữ ….Vai trò của racks là tùy biến.
+
+
+
+### 3.2 Giới thiệu chi tiết racks
+
+
+![Alt text](./anh/image-59.png)
+
+
+* **Racks** - Mỗi rack thì được gán cho 1 site, chiều cao của rack được đo bằng đơn vị U. Các racks thường cao từ 42 U đến 48 U nhưng trong netbox ta có thể chỉ định chiều cao của rack tùy ý. Mỗi rack được gán 1 tên và 1 id cơ sở riêng(tùy chọn).
+  * vd: tủ rack h1,h2,h3 (h1,h2,h3) tương ứng với ID của tủ rack
+
+`Rack Roles` : Mô tả của tủ rack ,
+
+![Alt text](./anh/image-61.png)
+
+
+`Rack Reservations` : Nó thường được sử dụng để miêu tả quá trình đặt chỗ cho các bộ máy chủ (servers) hoặc các thiết bị mạng khác trên các kệ rack trong trung tâm dữ liệu.
+
+`Rack Elevations` : Hiện thị độ cao giá đỡ của tủ rack mình tạo
+vd : 48u,42u,...
+
 
 - Thực hiện tạo 1 racks có tên là Thiết bị khách hàng và để đặt các thiết bị cho khách hàng
 
@@ -124,29 +117,70 @@ Width : 23 inches
 Height : Được tính bằng U, tủ của mình có chiều cao là 42U.
 
 
-![Alt text](image-19.png)
+![Alt text](./anh/image-19.png)
 
 
-![Alt text](image-20.png)
+![Alt text](./anh/image-20.png)
 
 
 
-**Mô hình Devices & Cabling**
+### 3.3 Giới thiệu chi tiết TENANCY
 
-![Alt text](image-1.png)
+
+- Tenancy
+Trước khi tạo Racks và Sites thì tạo nhóm khách hàng trước và các khách hàng sẽ có chúc năng với các thiết bị
+
+
+![Alt text](./anh/image-62.png)
+
+
+- Phần này được hiểu là phần người thuê,
+
+vd : Cty x,y,z hoặc BQP
+
+`Tenant` : Thuộc công ty bé ,đơn lẻ
+
+`TENANCY Groups` : Thuộc tập đoàn lớn hoặc 1 cụm cty
+
+vd 
+![Alt text](./anh/image-11.png)
+![Alt text](./anh/image-63.png)
+
+
+```
+1. Đặt tên cho tenancy
+2. Mô tả chi tiết cho tenancy này.
+3. Chọn Create để tạo
+```
+
+
+### 3.4 Giới thiệu chi tiết CONTACTS
+
+**Contacts**
+
+![Alt text](./anh/image-9.png)
+
+***Contact Groups***
+Các liên hệ có thể được nhóm tùy ý vào một hệ thống phân cấp đệ quy và một liên hệ có thể được chỉ định cho một nhóm ở bất kỳ cấp nào trong hệ thống phân cấp.
+VD :  Tập đoàn VT,FPT
+***Contact Roles***
+Vai trò liên hệ xác định mối quan hệ của một liên hệ với một đối tượng được chỉ định. Ví dụ: bạn có thể xác định vai trò cho các liên hệ quản trị, vận hành và khẩn cấp.
+VD : người quản trị trên IDC
+***Contacts***
+Một liên hệ phải đại diện cho một cá nhân hoặc điểm liên lạc lâu dài.
+
+vd : khoiHt chịu trách nhiệm sai sót hoặc lỗi
+
+### 4. Mô hình Devices & Cabling
+
+![Alt text](./anh/image-1.png)
 
 - Trong đó 
 
  ***Manufacturers***
 - Nhà sản xuất thường đại diện cho một tổ chức sản xuất thiết bị phần cứng 
 
-***Device Types***
-- Một loại thiết bị đại diện cho sự kết hợp duy nhất giữa nhà sản xuất và kiểu phần cứng ánh xạ tới kiểu và kiểu thiết bị riêng biệt tồn tại trong thế giới thực.Sau đó, các thiết bị mới thuộc loại này có thể được tạo trong NetBox và mọi thành phần được liên kết sẽ được tự động sao chép từ loại thiết bị.
-***The Device Type Library***
-- Các thiết bị có sẵn trong thư viện netbox
 
-***Devices***
-- Trong khi loại thiết bị xác định kiểu dáng và kiểu dáng của thiết bị, bản thân thiết bị đại diện cho một phần cứng thực tế được cài đặt ở đâu đó trong thế giới thực. Một thiết bị có thể được lắp đặt tại một vị trí cụ thể trong giá đỡ thiết bị hoặc được liên kết đơn giản với một địa điểm (và tùy chọn với một vị trí trong địa điểm đó).
 
 ***Virtual Chassis***
 - Chúng có thể được mô hình hóa dưới dạng khung ảo trong NetBox, với một thiết bị đóng vai trò là chủ khung và phần còn lại là thành viên.Tất cả các thành phần của thiết bị thành viên sẽ xuất hiện trên thiết bị chính
@@ -155,19 +189,66 @@ Height : Được tính bằng U, tủ của mình có chiều cao là 42U.
 ***Cables***
 - NetBox mô hình cáp như các kết nối giữa các loại thành phần thiết bị nhất định và các đối tượng khác. Mỗi cáp có thể được chỉ định một loại, màu sắc, chiều dài và nhã
 
-Thực hành tạo device .
+### 4.1  Giới thiệu chi tiết Device
+
+![Alt text](./anh/image-65.png)
+
+***Devices***
+- Trong khi loại thiết bị xác định kiểu dáng và kiểu dáng của thiết bị, bản thân thiết bị đại diện cho một phần cứng thực tế được cài đặt ở đâu đó trong thế giới thực. Một thiết bị có thể được lắp đặt tại một vị trí cụ thể trong giá đỡ thiết bị hoặc được liên kết đơn giản với một địa điểm (và tùy chọn với một vị trí trong địa điểm đó).
+
+Vd :sw2960 và add vào vị trí 39
+
+***Moudle***
+Các mô-đun đề cập đến các thành phần riêng lẻ tạo nên một thiết bị hoặc một phần của thiết bị. 
+Ví dụ: một bộ chuyển đổi mạng có thể có nhiều mô-đun như nguồn điện, thẻ dòng và khay quạt
+
+***Device Roles***
+- Vai trò thiết bị có thể được chỉ định cho một thiết bị khi nó được tạo hoặc chỉnh sửa và giúp cung cấp ngữ cảnh về mục đích sử dụng của một thiết bị cụ thể.
+
+VD: sw thì có vài trò access switch,hoặc distribution switches
+
+***Platforms*** -    Thường được hiểu như là 1 hệ điều hành 
+
+vd : centOS7,ubuntu 20.04 , ..
+
+***Virtual Chassis*** - Virtual Chassis đề cập đến khả năng nhóm nhiều thiết bị vật lý lại với nhau thành một đơn vị hợp lý, cho phép quản lý chúng như một thực thể duy nhất.
+***Virtual Device Contexts*** - Đề cập đến khả năng phân vùng thiết bị vật lý thành nhiều thiết bị logic, mỗi thiết bị có bộ tài nguyên và cấu hình riêng. Điều này có thể hữu ích trong các môi trường mà một thiết bị vật lý cần hỗ trợ nhiều đối tượng thuê hoặc ứng dụng.
+VD: VDC cho phép bạn tạo nhiều thiết bị ảo trong một thiết bị vật lý duy nhất, mỗi thiết bị có bảng định tuyến, VLAN, giao diện và các cài đặt cấu hình khác
+### 4.2  Giới thiệu chi tiết DEVICE TYPES
+
+* **DEVICE TYPES** -  Đề cập đến mỗi loại thiết bị có một tập hợp các thuộc tính và thuộc tính riêng được sử dụng để mô tả các đặc điểm và chức năng của thiết bị đó.
+  VD : Firewall,sw2900, server R1
+* **Module Types** các loại mô-đun đề cập đến các loại thành phần khác nhau tạo nên một thiết bị hoặc một phần của thiết bị.
+VD : Khay quạt , nguồn điện
+* **Manufacturers** - Hãng sản xuất 
+VD : DELL,Fortinet,cisco ,...
+* **DEVICE COMPONENTS** - Linh kiện thiết bị 
+
+VD:
+`Console ports`:cổng vật lý trên thiết bị cho phép bạn kết nối cáp đầu cuối hoặc bảng điều khiển để truy cập giao diện dòng lệnh (CLI) của thiết bị cho mục đích cấu hình và quản lý
+`Console server ports`Cổng này tương tự như cổng bảng điều khiển, nhưng chúng thường được sử dụng để kết nối với máy chủ bảng điều khiển, cung cấp quyền truy cập từ xa vào giao diện CLI của nhiều thiết bị từ một vị trí.
+`Power ports:`Cổng được sử dụng để cấp nguồn cho thiết bị, thường ở dạng bộ điều hợp nguồn AC hoặc DC.
+`Power outlets`:Đây là những ổ cắm điện nơi bạn có thể cắm dây nguồn để cung cấp điện cho thiết bị.
+`Front ports`: Cổng phía trước của thiết bị 
+`Rear ports`: Đây là các cổng vật lý ở mặt sau của thiết bị, thường được sử dụng để kết nối cáp mạng hoặc các thiết bị ngoại vi khác.
+`Module bays:` Đây là các khe hoặc ngăn bên trong thiết bị nơi bạn có thể lắp đặt các thiết bị bổ sung, chẳng hạn như ổ đĩa cứng hoặc ổ đĩa quang.
+`Inventory items` :Những mục được theo dõi trong hệ thống kiểm kê, chẳng hạn như thiết bị mạng, máy chủ hoặc tài sản CNTT khác. Mục đích của việc theo dõi hàng tồn kho là để theo dõi những tài sản bạn có, vị trí của chúng và trạng thái hiện tại của chúng, điều này có thể giúp bảo trì và khắc phục sự cố.
+
+
+
+### Thực hành tạo device .
 
 **Tạo Manufacturers(tạo nhà sản xuất)**
 
-![Alt text](image-21.png)
+![Alt text](./anh/image-21.png)
 
 
-![Alt text](image-22.png)
+![Alt text](./anh/image-22.png)
 
 
 - Đây là kq sau khi tạo xong 
 
-![Alt text](image-23.png)
+![Alt text](./anh/image-23.png)
 
 
 Trong đó : 
@@ -184,15 +265,15 @@ Trong đó :
 - Tạo 1 device types
 
 
-![Alt text](image-24.png)
+![Alt text](./anh/image-24.png)
 
 
-![Alt text](image-25.png)
+![Alt text](./anh/image-25.png)
 
 
 Kết quả sau khi tạo xong: 
 
-![Alt text](image-26.png)
+![Alt text](./anh/image-26.png)
 
 
 Trong đó:
@@ -202,20 +283,20 @@ Trong đó:
 
 Tạo các interface ,Power Ports cho thiết bị 
 
-![Alt text](image-30.png)
+![Alt text](./anh/image-30.png)
 
-![Alt text](image-31.png)
+![Alt text](./anh/image-31.png)
 
 - Trong đó 
 `Name` : Đặt tên là power 1 ( nguồn 1)
 `Type` : Đối với Switch của mình là chân C14.
-`Maximum draw`: Mức tiêu thụ năng lượng tối đa mình tạm thời để là 30w
+`Max./anh/imum draw`: Mức tiêu thụ năng lượng tối đa mình tạm thời để là 30w
 `Allocated draw` : Mức tiêu thụ điện năng bình thường là 4w
 
 
-![Alt text](image-32.png)
+![Alt text](./anh/image-32.png)
 
-![Alt text](image-33.png)
+![Alt text](./anh/image-33.png)
 
 
 - *Tạo tương tự với server (lưu ý server cần đổi và chọn lại interface)*
@@ -226,14 +307,14 @@ Tạo các interface ,Power Ports cho thiết bị
 - Nhập vai trò của các core swith,server,...
 
 
-![Alt text](image-28.png)
+![Alt text](./anh/./anh/image-28.png)
 
-![Alt text](image-27.png)
+![Alt text](./anh/image-27.png)
 
 
 - kết quả sau khi tạo
 
-![Alt text](image-29.png)
+![Alt text](./anh/image-29.png)
 
 
 - Trong đó 
@@ -244,16 +325,16 @@ Tạo các interface ,Power Ports cho thiết bị
 
 - Thêm thiết bị vào tủ Rack(Có 2 cách)
 
-![Alt text](image-35.png)
-![Alt text](image-36.png)
-![Alt text](image-37.png)
-![Alt text](image-34.png)
+![Alt text](./anh/image-35.png)
+![Alt text](./anh/image-36.png)
+![Alt text](./anh/image-37.png)
+![Alt text](./anh/image-34.png)
 
 
 - Kết quả sau khi thêm 
 
 
-![Alt text](image-38.png)
+![Alt text](./anh/image-38.png)
 
 - Trong đó 
 
@@ -265,66 +346,114 @@ Tạo các interface ,Power Ports cho thiết bị
 
 **Power Tracking**
 
-Là một phần của bộ tính năng DCIM, NetBox hỗ trợ mô hình hóa năng lượng của cơ sở dưới dạng các bảng nguồn và nguồn cấp dữ liệu riêng biệt. Chúng được sử dụng phổ biến nhất để lập tài liệu phân phối điện trong trung tâm dữ liệu, nhưng cũng có thể phục vụ các môi trường truyền thống hơn.
+Là một phần của bộ tính năng DC./ANH/IM, NetBox hỗ trợ mô hình hóa năng lượng của cơ sở dưới dạng các bảng nguồn và nguồn cấp dữ liệu riêng biệt. Chúng được sử dụng phổ biến nhất để lập tài liệu phân phối điện trong trung tâm dữ liệu, nhưng cũng có thể phục vụ các môi trường truyền thống hơn.
 
 
-![Alt text](image-2.png)
+![Alt text](./anh/image-2.png)
 
 
-**IP Address Management**
 
-![Alt text](image-3.png)
+### 5. Mô hình CONNECTIONS
+
+
+![Alt text](./anh/image-66.png)
+
+- Thông thường sau khi cài đặt xong tất cả rồi mới sử dụng modun này 
+
+***5.1 Cables*** - Thường sử dụng để kết nối các cổng interface,các dây nguồn ,hiểu đơn giản là dây kết nối 
+vd : cat5,6,5e,DC,AC,Power,..
+
+***5.2 Wireless Links*** - Là giải pháp truyền không dây cho phép nó giao tiếp với các loại thiết bị và mạng khác nhau 
+VD : WF, bluetooth,camera giao thông 
+
+***5.3 Interface Connections*** - Hiển thị giao diện các cổng interface kết nối với nhau 
+
+VD:
+
+
+![Alt text](./anh/image-67.png)
+
+
+***5.4 Console Connections*** - Thực hiện kết nối qua bảng điều khiển console (GUI)
+
+***5.5 Power Connections*** - Kết nối nguồn giữa các thiết bị 
+
+VD : power1 server1 kết nối với nguồn điện dự phòng power2
+
+### 6. Mô hình WIRELESS
+***6. 1Wireless LANs*** - Cung cấp kết nối không dây giữa các thiết bị như máy tính xác tay ,điện thoại thông minh.. và tất cả các thiết bị trong vùng phủ sóng . => Cho phép người dùng truy cập internet chia sẻ tệp với nhau , cho phép in không dây 
+
+***6 .2Wireless LAN Groups*** - Cung cấp kết nối không dây trong 1 tập đoàn
+
+## 7. Mô hình IPAM
+
+![Alt text](./anh/image-3.png)
 
 Quản lý địa chỉ IP (IPAM) là một trong những tính năng cốt lõi của NetBox. Nó hỗ trợ tính chẵn lẻ đầy đủ cho IP4 và IPv6, gán VRF nâng cao, hình thành hệ thống phân cấp tự động, v.v.
 IPAM là viết tắt của IP Address Management, được sử dụng để quản lý các vlan và địa chỉ IP. Từ đó ta sẽ biết được có bao nhiêu IP còn trống, những IP nào đã được sử dụng, những IP nào đã bị thu hồi. Từ đó ta có thể lập kế hoạch và phân bổ địa chỉ IP 1 cách chặt chẽ trong mạng máy tính. Trong bài viết này mình sẽ hướng dẫn các bạn cách để khai báo các mục của IPAM trong Netbox.
 
-***IP Hierarchy***
-NetBox sử dụng một số loại đối tượng để biểu thị phân cấp tài nguyên IP:
-`Aggregate` :Tiền tố đại diện cho gốc của hệ thống phân cấp địa chỉ.
-`Prefix`  :  Một mạng con được xác định trong một tập hợp. Các tiền tố mở rộng hệ thống phân cấp bằng cách lồng vào nhau. (Ví dụ: 192.168.123.0/24 sẽ xuất hiện trong 192.168.0.0/16.)
-`IP Range`: Một phạm vi tùy ý của các địa chỉ IP riêng lẻ trong một tiền tố, tất cả đều chia sẻ cùng một mặt nạ
-`IP Address`: Một địa chỉ IP riêng lẻ cùng với mặt nạ mạng con của nó, được sắp xếp tự động bên dưới tiền tố gốc của nó.
-vd một hệ thống phân cấp
-100.64.0.0/10 (tổng hợp)
-100.64.0.0/20 (tiền tố)
-100.64.16.0/20 (tiền tố)
-100.64.16.0/24 (tiền tố)
-100.64.16.1/24 (địa chỉ)
-100.64.16.2/24 (địa chỉ)
-100.64.16.3/24 (địa chỉ)
-100.64.16.9/24 (tiền tố)
-100.64.32.0/20 (tiền tố)
-100.64.32.1/24 (địa chỉ)
-100,64,32,10-99/24 (phạm vi)
+* **7.1 IP ADDRESSES** Cấu hình , cung cấp địa chỉ IP tự động và IP gateway
+VD : nếu bộ định tuyến NetBox có địa chỉ IP là 192.168.1.1 thì người dùng có thể truy cập giao diện web của bộ định tuyến bằng cách nhập địa chỉ đó vào thanh địa chỉ của trình duyệt web 
+* **7.2 IP Ranges** - Là 1 dải địa chỉ IP ,là một nhóm địa chỉ IP được sử dụng để xác định các thiết bị trên mạng.
 
-***VRF Tracking***
-NetBox hỗ trợ mô hình hóa các phiên bản định tuyến và chuyển tiếp ảo (VRF) rời rạc để biểu diễn nhiều bảng định tuyến, bao gồm cả những bảng có không gian địa chỉ chồng chéo. Mỗi loại đối tượng IP trong một tập hợp - tiền tố, dải IP và địa chỉ IP - có thể được gán cho một VRF cụ thể
+VD: Nếu cho phép đặt dải IP từ 192.168.1.100 đến 192.168.1.200 thì mọi thiết bị được kết nối với mạng của bộ định tuyến sẽ được chỉ định một địa chỉ IP trong dải đó.
+
+* **7.3  PREFIXES** - là cho phép định tuyến hiệu quả lưu lượng mạng giữa các thiết bị. Khi một thiết bị muốn gửi dữ liệu đến một thiết bị khác trên cùng một mạng, nó cần biết địa chỉ IP và tiền tố của thiết bị đích để gửi các gói đến đúng đích.
+
+VD : nếu đặt /24 cho bộ định tuyến NetBox, thì bộ định tuyến sẽ gán địa chỉ IP cho các thiết bị trong phạm vi từ 192.168.1.0/24 đến 192.168.1.255/24.
+
+* **7.4  ASN Ranges**  - Là mã định danh duy nhất được gán cho các mạng hoạt động trong một miền 
+
+VD: nếu phạm vi ASN từ 1000 đến 2000 cho bộ định tuyến NetBox, thì bất kỳ thiết bị nào được kết nối với mạng của bộ định tuyến đều có thể được chỉ định ASN trong phạm vi đó
+
+![Alt text](./anh/image-68.png)
+
+
+
+* **7.4  Aggregates** - Sử dụng để xác định 1 dải địa chỉ IP lớn , phân bổ cao nhất 
+
+VD : 192.168.0.0/24
+
+* **7. 5RIRs (Regional Internet Registries)** - Chịu trách nhiệm phân bổ không gian địa chỉ IP , có 5 RIRs :  ARIN, RIPE, APNIC, LACNIC và AFRINIC.
+
+VD Như khu vực châu Á : AFRINIC
+
+* **VRFs** - là một công nghệ cho phép nhiều bảng định tuyến cùng tồn tại trong một bộ định tuyến vật lý duy nhất.Cung cấp cách tạo bảng định tuyến ảo hóa và cách ly lưu lượng giữa các nhóm hoặc khách hàng khác nhau trên một bộ định tuyến vật lý.
+
+
+* **VLAN**  - Tạo các phân đoạn mạng LAN , mỗi VLAN được gán cho mỗi định danh duy nhất 
+
+VD : Một tổ chức muốn phân tách lưu lượng giữa các bộ phận khác nhau như tài chính, nhân sự và tiếp thị, họ có thể tạo VLAN riêng cho từng bộ phận
+
+
+* **VLAN GROUP** - super của VLAN
+
 
 Thực hành tạo IPAM trong netbox
 
 ***- Bước 1 : Tạo Vlan group ***
 
-![Alt text](image-39.png)
-![Alt text](image-42.png)
-![Alt text](image-40.png)
+![Alt text](./anh/image-39.png)
+![Alt text](./anh/image-42.png)
+![Alt text](./anh/image-40.png)
 
 - Trong đó
 `Name`  : Đặt tên cho Vlan Group
-Chọn `DCIM > site` để chỉ định site mà VLAN Group này thuộc về
+Chọn `DC./ANH/IM > site` để chỉ định site mà VLAN Group này thuộc về
 Chọn `Region` tương ứng với Site định đặt VLAN Group
 Chọn `Site` mà VLAN Group này thuộc về
 
 Sau khi hoàn tất click vào nút `create`,Kết quả sau khi tạo
 
-![Alt text](image-43.png)
+![Alt text](./anh/image-43.png)
 
 ***VLANs***
 - Tạo ra các VLAN , những vlan có chung mục đích sử dụng có thể nhóm vào 1 nhóm vlan group 
 
 Tạo 1 VLAN như sau:
 
-![Alt text](image-44.png)
-![Alt text](image-45.png)
+![Alt text](./anh/image-44.png)
+![Alt text](./anh/image-45.png)
 
 - Trong đó : 
 
@@ -340,12 +469,12 @@ Tạo 1 VLAN như sau:
 RIRs (Regional Internet Registries)
 - Chịu trách nhiệm phân bổ không gian địa chỉ IP , có 5 RIRs :  ARIN, RIPE, APNIC, LACNIC và AFRINIC.
 
-![Alt text](image-46.png)
+![Alt text](./anh/image-46.png)
 
 *Aggregates*
 - Sử dụng để xác định 1 dải địa chỉ IP lớn , phân bổ cao nhất 
 
-![Alt text](image-47.png)
+![Alt text](./anh/image-47.png)
 
 
 `Prefix` : Nhập vào dải địa chỉ lớn nhất
@@ -364,26 +493,26 @@ Prefix có các Status sau:
 `Deprecated` : Không còn sử dụng
 
 
-![Alt text](image-48.png)
+![Alt text](./anh/image-48.png)
 
 
 ***IP addresses***
 
 - Chú ý đến 2 trường sau 
 
-![Alt text](image-49.png)
+![Alt text](./anh/image-49.png)
 
 Trường `New IP` sử dụng để tạo mới từng địa chỉ IP 1. Thường sử dụng để tạo các địa chỉ là Gateway hoặc tạo các địa chỉ Nat. Trường thứ 2 là `Bulk Create` sử dụng để tạo hàng loạt các địa chỉ ip.
 
 
-![Alt text](image-51.png)
-![Alt text](image-50.png)
+![Alt text](./anh/image-51.png)
+![Alt text](./anh/image-50.png)
 
 
 **VLAN Management**
 
 
-![Alt text](image-4.png)
+![Alt text](./anh/image-4.png)
 
 
 Bổ sung khả năng IPAM của nó, NetBox cũng theo dõi thông tin VLAN để hỗ trợ cấu hình mạng lớp hai.. Vlan được xác định theo IEEE 802.1Q và các tiêu chuẩn liên quan, đồng thời có thể được gán cho các nhóm và vai trò chức năng.
@@ -397,7 +526,7 @@ NetBox lập mô hình Vlan theo định nghĩa của chúng theo IEEE 802.1Q, v
 
 **Circuits**
 
-![Alt text](image-5.png)
+![Alt text](./anh/image-5.png)
 
 
 ***Providers***
@@ -408,7 +537,7 @@ Một kết nối Internet được phân phối dưới dạng cáp quang sẽ 
 
 **wireless** 
 
-![Alt text](image-6.png)
+![Alt text](./anh/image-6.png)
 
 Giống như NetBox cung cấp mô hình hóa mạnh mẽ cho các nhà máy cáp vật lý, nó cũng hỗ trợ mô hình hóa mạng LAN không dây và liên kết điểm-điểm.
 
@@ -425,7 +554,7 @@ Trong khi mạng LAN không dây đại diện cho phân đoạn đa truy cập 
 **Virtualization**
 
 
-![Alt text](image-7.png)
+![Alt text](./anh/image-7.png)
 
 Các máy ảo và cụm có thể được lập mô hình trong NetBox cùng với cơ sở hạ tầng vật lý. Địa chỉ IP và các tài nguyên khác được gán cho các đối tượng này giống như các đối tượng vật lý, mang đến sự tích hợp liền mạch giữa mạng vật lý và mạng ảo.
 
@@ -438,7 +567,7 @@ Máy ảo là một phiên bản tính toán được ảo hóa. Chúng hoạt �
 
 **Tenancy**
 
-![Alt text](image-8.png)
+![Alt text](./anh/image-8.png)
 
 
 Thông thường trước khi tạo các mục trong Racks và Sites, ta nên tạo các nhóm khách hàng trước và các khách hàng sẽ có vai trò đối với các thiết bị.
@@ -456,18 +585,6 @@ VLANs
 Circuits
 Virtual machines
 
-**Contacts**
-
-![Alt text](image-9.png)
-
-***Contact Groups***
-Các liên hệ có thể được nhóm tùy ý vào một hệ thống phân cấp đệ quy và một liên hệ có thể được chỉ định cho một nhóm ở bất kỳ cấp nào trong hệ thống phân cấp.
-
-***Contact Roles***
-Vai trò liên hệ xác định mối quan hệ của một liên hệ với một đối tượng được chỉ định. Ví dụ: bạn có thể xác định vai trò cho các liên hệ quản trị, vận hành và khẩn cấp.
-
-***Contacts***
-Một liên hệ phải đại diện cho một cá nhân hoặc điểm liên lạc lâu dài.
 
 
 
@@ -475,17 +592,17 @@ Một liên hệ phải đại diện cho một cá nhân hoặc điểm liên l
 - Tạo kết nối từ server tới switch ,cần tạo interface cho thiết bị 
 
 
-![Alt text](image-52.png)
-![Alt text](image-53.png)
+![Alt text](./anh/image-52.png)
+![Alt text](./anh/image-53.png)
 
-![Alt text](image-54.png)
+![Alt text](./anh/image-54.png)
 
 
 - Gán địa chỉ IP
 
-![Alt text](image-55.png)
+![Alt text](./anh/image-55.png)
 
-![Alt text](image-56.png)
+![Alt text](./anh/image-56.png)
 
 
 Gán switch, fortinet cũng tương tự
@@ -493,7 +610,7 @@ Gán switch, fortinet cũng tương tự
 **Tenancy**
 - Hầu hết các đối tượng được liên kết đều được hỗ trợ người thuê , Liên kết của một đối tượng thuê cụ thể truyền đạt quyền sở hữu
 - 
-![Alt text](image-57.png)
+![Alt text](./anh/image-57.png)
 
 
 ***Tenant Groups***
@@ -508,13 +625,4 @@ Chỉ định người thuê được sử dụng để biểu thị quyền s�
 `Power Panel`: Quản lý các tủ điện và các thông tin liên quan.
 `Power Feed`: Quản lý các nguồn cấp điện cho các thiết bị mạng.
 
-
-`Console ports`:cổng vật lý trên thiết bị cho phép bạn kết nối cáp đầu cuối hoặc bảng điều khiển để truy cập giao diện dòng lệnh (CLI) của thiết bị cho mục đích cấu hình và quản lý
-`Console server ports`Cổng này tương tự như cổng bảng điều khiển, nhưng chúng thường được sử dụng để kết nối với máy chủ bảng điều khiển, cung cấp quyền truy cập từ xa vào giao diện CLI của nhiều thiết bị từ một vị trí.
-`Power ports:`Cổng được sử dụng để cấp nguồn cho thiết bị, thường ở dạng bộ điều hợp nguồn AC hoặc DC.
-`Power outlets`:Đây là những ổ cắm điện nơi bạn có thể cắm dây nguồn để cung cấp điện cho thiết bị.
-`Front ports`: Cổng phía trước của thiết bị 
-`Rear ports`: Đây là các cổng vật lý ở mặt sau của thiết bị, thường được sử dụng để kết nối cáp mạng hoặc các thiết bị ngoại vi khác.
-`Module bays:` Đây là các khe hoặc ngăn bên trong thiết bị nơi bạn có thể lắp đặt các thiết bị bổ sung, chẳng hạn như ổ đĩa cứng hoặc ổ đĩa quang.
-`Inventory items` :Những mục được theo dõi trong hệ thống kiểm kê, chẳng hạn như thiết bị mạng, máy chủ hoặc tài sản CNTT khác. Mục đích của việc theo dõi hàng tồn kho là để theo dõi những tài sản bạn có, vị trí của chúng và trạng thái hiện tại của chúng, điều này có thể giúp bảo trì và khắc phục sự cố.
 
