@@ -55,7 +55,7 @@ Vào `Connections` để check xem kết nối, hoặc có thể vào `rack` đ�
 ### Mô hình tổng hợp (các phần định nghĩa nằm trong phần này ) [Định nghĩa](Introduction.md)
 
 
-Mục Tiêu bài lab .Thưc hiện cấu hình VLAN cho mạng,thực hiện hoàn tất các modul trong device và origanization
+***Mục Tiêu bài lab .Thưc hiện cấu hình VLAN cho mạng,thực hiện hoàn tất các modul trong device và origanization***
 
 B1 : Thực hiện cấu hình ở organization
 
@@ -221,4 +221,8 @@ Thực hiện gán IP cho các cổng interface
 - Sau khi thiết lập cấu hình vào server để xem
 
 
-![Alt text](./anh_lab/./anh_lab/image-65.png)
+![Alt text](./anh_lab/image-65.png)
+
+
+
+
