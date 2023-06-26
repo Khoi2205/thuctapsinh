@@ -43,7 +43,10 @@ vd: VNPT_IDC nam thăng long
 
  
 Trong site sẽ có Regions,Site,Site Group,Location
+
+
 ***Regions***
+
 - Tạo 1 region
 
 ![Alt text](./anh/image-15.png)
