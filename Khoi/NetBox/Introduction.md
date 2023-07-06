@@ -310,7 +310,7 @@ Tạo các interface ,Power Ports cho thiết bị
 - Nhập vai trò của các core swith,server,...
 
 
-![Alt text](./anh/./anh/image-28.png)
+![Alt text](./anh/image-28.png)
 
 ![Alt text](./anh/image-27.png)
 
