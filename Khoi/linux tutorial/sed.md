@@ -27,7 +27,7 @@ sửa dụng câu lệnh `sed '' test.sh` sẽ hiển thị kq sau
 
 `sed 'p' tesh.sh`
 
-[Imgur](https://i.imgur.com/rjgWFLs.png)
+![Alt text](./anh_sed/image.png)
 
 
 Để có thể linh hoạt hơn trong việc in kết quả ra màn hình, ví dụ như chỉ in ra dòng đầu tiên, in ra các dòng từ 1 - 5, hoặc in ra các dòng có thứ tự lẻ... thì chúng ta cần sử dụng thêm các tham số kết hợp với lệnh p.
@@ -44,8 +44,7 @@ In ra các dòng với số thứ tự lẻ:
 `sed -n '1~2p' test.sh` 
 
 
-[Imgur](https://i.imgur.com/TZ7XDGc.png)
-
+![Alt text](./anh_sed/image-1.png)
 
 **2.3 Sử dụng `sed '' `  để thay thế**
 
@@ -58,17 +57,21 @@ VD:
 `sed 's/xin chao/BAN DA CHUYEN ĐỔI/' test.sh`
 
 
-[Imgur](https://i.imgur.com/4IQcYBZ.png)
+![Alt text](./anh_sed/image-2.png)
+
+
 
 - Với câu lệnh trên sẽ hiển thị kí tự mình thay đổi nhưng sẽ không đổi trong file test.sh 
 
 
-[](https://i.imgur.com/7p7fWsa.png)
+![Alt text](./anh_sed/image-4.png)
 
 
 - Sử dụng tham số `i` sẽ thay đổi trong cả file gốc 
 
 vd 
+
+
 `sed -i 's/trung quoc/brazil/g' test.sh `
 
 Chú thích:
@@ -76,5 +79,5 @@ Chú thích:
 "g" ở cuối biểu thức chính quy là một tuỳ chọn để thực hiện thay thế toàn bộ các xuất hiện của "trung quoc" trong văn bản. Nếu không sử dụng tuỳ chọn này, chỉ có xuất hiện đầu tiên của "trung quoc" trong mỗi dòng sẽ được thay thế.
 
 
-[](https://i.imgur.com/Oo1PX0X.png)
+![Alt text](./anh_sed/image-3.png)
 
