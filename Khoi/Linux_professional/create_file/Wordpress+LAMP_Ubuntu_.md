@@ -1,3 +1,4 @@
+```
 #!/bin/bash
 
 # Check OS
@@ -65,3 +66,4 @@ EOF
     ufw allow 'Apache'
     systemctl restart apache2
 fi
+```

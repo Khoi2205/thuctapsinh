@@ -1,3 +1,4 @@
+```
 #!/bin/bash 
 
 # Check OS
@@ -73,3 +74,4 @@ then
     firewall-cmd --reload > /dev/null 2>&1
     systemctl reload httpd
 fi
+```
