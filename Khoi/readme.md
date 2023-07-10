@@ -34,3 +34,4 @@
 4. [Tự_động_backup_DB + Lập lịch tự động backup](Linux_professional/create_file/auto_backup_DB_website.md)
 5. [Tự_động_xóa_backup](Linux_professional/create_file/auto_rm_backup_website.md%20tutorial/)
 6. [Tự_động_Tạo_file txt](Linux_professional/create_file/txt.md)
+7. 
