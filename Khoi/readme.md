@@ -32,6 +32,6 @@
 2. [wordpress_CentOS7](Linux_professional/create_file/word_press+LAMP_CentOS7.md)
 3. [wordpress_Ubuntu](Linux_professional/create_file/Wordpress+LAMP_Ubuntu_.md)
 4. [Tự_động_backup_DB + Lập lịch tự động backup](Linux_professional/create_file/auto_backup_DB_website.md)
-5. [Tự_động_xóa_backup](Linux_professional/create_file/auto_rm_backup_website.mdd)
+5. [Tự_động_xóa_backup](Linux_professional/create_file/auto_rm_backup_website.md)
 6. [Tự_động_Tạo_file txt](Linux_professional/create_file/txt.md)
 7. 
