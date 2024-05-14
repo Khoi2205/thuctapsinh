@@ -39,6 +39,15 @@
       - [5.9 Tăng dung lượng snapshot trong lvm\*\*](#59-tăng-dung-lượng-snapshot-trong-lvm)
       - [5.10 Restore Logical Volume\*\*](#510-restore-logical-volume)
       - [5.11 Xóa Logical Volume, Volume Group, Physical Volume\*\*](#511-xóa-logical-volume-volume-group-physical-volume)
+- [6.LVM\_on CentOS7](#6lvm_on-centos7)
+
+
+
+
+
+
+
+
 
 
 
@@ -622,3 +631,109 @@ root@ubutu:~# pvremove /dev/sdd1
 
 
 [def]: #51--thực-hiện-chia-nhỏ-các-ổ-đĩa
+
+
+
+
+
+# 6.LVM_on CentOS7
+
+
+
+Mô hình 
+
+![](./image/Screenshot_24.png)
+
+
+
+Thực hiện tạo phân vùng 
+
+`[root@localhost ~]# fdisk /dev/sdb`
+
+```
+
+
+Command (m for help): n
+Partition type:
+   p   primary (1 primary, 0 extended, 3 free)
+   e   extended
+Select (default p): p
+Partition number (1-4, default 2):1
+First sector (2048-41943039, default 2048):   # starting cylinder
+ast sector, +sectors or +size{K,M,G} (2048-41943039, default 41943039):   # end cylinder
+Using default value 41943039
+Partition 1 of type Linux and of size 20 GiB is set
+
+```
+
+Thay đổi định dạng của partition vừa mới tạo thành LVM
+
+```
+[root@localhost ~]# fdisk /dev/sdb
+Welcome to fdisk (util-linux 2.23.2).
+
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+
+
+Command (m for help): t
+Selected partition 1
+Hex code (type L to list all codes): 8e
+Changed type of partition 'Linux' to 'Linux LVM'
+
+Command (m for help): w
+The partition table has been altered!
+
+Calling ioctl() to re-read partition table.
+Syncing disks.
+
+```
+
+```
+[root@localhost ~]# pvcreate /dev/sdb1
+  Physical volume "/dev/sdb1" successfully created.
+```
+
+Hiển thị pvs
+`pvsdisplay`
+
+xóa pv `pvremove /dev/sdb1`
+
+
+
+
+Thực hiện add vào vg volume centOS.
+
+
+![](./image/Screenshot_25.png)
+
+```
+[root@localhost ~]# vgextend centos /dev/sdb1
+  Physical volume "/dev/sdb1" successfully created.
+  Volume group "centos" successfully extended
+```
+
+Nhận thấy sự khác nhau khi thêm 
+
+
+![](./image/Screenshot_26.png)
+
+
+
+
+Thêm dung lượng cho lv `root centos` 
+
+
+```
+[root@localhost ~]# lvextend -l +100%FREE /dev/centos/root
+  Size of logical volume centos/root changed from <17.00 GiB (4351 extents) to 26.99 GiB (6910 extents).
+  Logical volume centos/root successfully resized.
+```
+
+
+Kết quả sau khi thêm : thực hiện hoàn thành thêm 1 ổ đĩa hoàn toàn mởi vào ổ đĩa chung của root
+
+
+![](./image/Screenshot_27.png)
+
+
