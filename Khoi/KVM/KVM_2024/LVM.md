@@ -14,7 +14,7 @@
  
 [5.Thực hiện bài lab](#thực-hiện-bài-lab)
         [5.1 Thực hiện chia nhỏ các ổ đĩa ](#51--thực-hiện-chia-nhỏ-các-ổ-đĩa)
-            [5.2 Tạo Physical Volume](#52-tạo-physical-volume)
+           [5.2 Tạo Physical Volume](#52-tạo-physical-volume)
             [5.3 Thực hiện tạo Volume Group](#53-tạo-volume-group)
     [5.4 Thực hiện tạo Logical Volume](#54-thực-hiện-tạo-logical-volume)
     [5.5 Thực hiện tăng dung lượng cho Logical Volume](#55-thực-hiện-thay-đổi-dung-lượng-cho-logical-volume)
