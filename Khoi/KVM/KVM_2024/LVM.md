@@ -3,10 +3,15 @@
 # Mục lục 
 
  [1.Khái niệm](#linux-lvm-là-gì)
+
  [2.Ưu điểm ](#ưu-điểm-)
+
  [3.Ưu điểm ](#nhược-điểm-)
+
  [4.Các Thành phần trong LVM](#các-thành-phần-trong-lvm)
+
  [4.1 Thành phần câu lệnh trong lVM](#thành-phần-câu-lệnh-cli-quản-lý-phân-vùng-ổ-đĩa)
+ 
 [5.Thực hiện bài lab](#thực-hiện-bài-lab)
         [5.1 Thực hiện chia nhỏ các ổ đĩa ](#51--thực-hiện-chia-nhỏ-các-ổ-đĩa)
             [5.2 Tạo Physical Volume](#52-tạo-physical-volume)
