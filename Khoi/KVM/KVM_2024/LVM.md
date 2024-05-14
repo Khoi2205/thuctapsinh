@@ -12,18 +12,49 @@
 
  [4.1 Thành phần câu lệnh trong lVM](#thành-phần-câu-lệnh-cli-quản-lý-phân-vùng-ổ-đĩa)
  
+
+
+
+
+
+
 [5.Thực hiện bài lab](#thực-hiện-bài-lab)
-        [5.1 Thực hiện chia nhỏ các ổ đĩa ](#51--thực-hiện-chia-nhỏ-các-ổ-đĩa)
-           [5.2 Tạo Physical Volume](#52-tạo-physical-volume)
-            [5.3 Thực hiện tạo Volume Group](#53-tạo-volume-group)
-    [5.4 Thực hiện tạo Logical Volume](#54-thực-hiện-tạo-logical-volume)
-    [5.5 Thực hiện tăng dung lượng cho Logical Volume](#55-thực-hiện-thay-đổi-dung-lượng-cho-logical-volume)
-    [5.6 Thực hiện giảm  dung lượng cho Logical Volume](#56-thực-hiện-giảm--dung-lượng-cho-logical-volume)
-    [5.7 Thay đổi dung lượng Volume Group trên LVM0](#57-thay-đổi-dung-lượng-volume-group-trên-lvm)
-    [5.8 Snapshot Logical Volume](#58-snapshot-logical-volume)
-    [5.9 Tăng dung lượng snapshot trong lvm](#59-tăng-dung-lượng-snapshot-trong-lvm)
-    [5.10 Restore Logical Volume](#510-restore-logical-volume)
-    [5.11 Xóa Logical Volume, Volume Group, Physical Volume](#511-xóa-logical-volume-volume-group-physical-volume)
+- [LVM](#lvm)
+- [Mục lục](#mục-lục)
+    - [Linux LVM là gì?](#linux-lvm-là-gì)
+    - [Ưu điểm ?](#ưu-điểm-)
+    - [Nhược điểm ?](#nhược-điểm-)
+    - [Các thành phần trong LVM](#các-thành-phần-trong-lvm)
+    - [Thành phần câu lệnh (CLI) quản lý phân vùng ổ đĩa](#thành-phần-câu-lệnh-cli-quản-lý-phân-vùng-ổ-đĩa)
+    - [Thực hiện bài lab](#thực-hiện-bài-lab)
+      - [Mô hình thực hiện](#mô-hình-thực-hiện)
+      - [5.1  Thực hiện chia nhỏ các ổ đĩa](#51--thực-hiện-chia-nhỏ-các-ổ-đĩa)
+      - [5.2 Tạo Physical Volume\*\*](#52-tạo-physical-volume)
+      - [5.3 Tạo Volume Group\*\*](#53-tạo-volume-group)
+      - [5.4 Thực hiện tạo Logical Volume\*\*](#54-thực-hiện-tạo-logical-volume)
+      - [5.5 Thực hiện thay đổi dung lượng cho Logical Volume](#55-thực-hiện-thay-đổi-dung-lượng-cho-logical-volume)
+      - [5.6 Thực hiện giảm  dung lượng cho Logical Volume\*\*](#56-thực-hiện-giảm--dung-lượng-cho-logical-volume)
+      - [5.7 Thay đổi dung lượng Volume Group trên LVM\*\*](#57-thay-đổi-dung-lượng-volume-group-trên-lvm)
+      - [5.8 Snapshot Logical Volume](#58-snapshot-logical-volume)
+      - [5.9 Tăng dung lượng snapshot trong lvm\*\*](#59-tăng-dung-lượng-snapshot-trong-lvm)
+      - [5.10 Restore Logical Volume\*\*](#510-restore-logical-volume)
+      - [5.11 Xóa Logical Volume, Volume Group, Physical Volume\*\*](#511-xóa-logical-volume-volume-group-physical-volume)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### Linux LVM là gì?    
 
