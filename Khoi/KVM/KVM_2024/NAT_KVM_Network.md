@@ -51,3 +51,25 @@ Thực hiện ping 8.8.8.8 ở máy vm1
 
 
 ![](./image/Screenshot_41.png)
+
+
+### Khi tạo card mạng nat 
+
+![](./image/Screenshot_43.png)
+
+
+Giải thích
+
+Theo thông tin bạn cung cấp, ảnh chụp màn hình cho thấy trạng thái liên kết của một thiết bị ảo hóa được mô phỏng bởi phần mềm Virtio. Các thông tin được hiển thị trong ảnh bao gồm:
+
+Mô hình thiết bị: virtio
+Địa chỉ MAC: e1000e
+Địa chỉ IP: Hypervisor default
+Trạng thái liên kết: virtio
+
+Mô hình thiết bị: `virtio` là tên mô hình thiết bị ảo hóa được sử dụng bởi phần mềm Virtio. Mô hình thiết bị này mô phỏng một thẻ mạng ảo cho phép thiết bị ảo giao tiếp với mạng lưới ảo hoặc mạng vật lý.
+
+
+Địa chỉ MAC: `e1000e` là địa chỉ MAC được gán cho thẻ mạng ảo của thiết bị. Địa chỉ MAC là một số định danh duy nhất được sử dụng để xác định các thiết bị mạng.
+
+Địa chỉ IP: Hypervisor default cho biết thiết bị ảo chưa được gán địa chỉ IP tĩnh. Địa chỉ IP là một số định danh được sử dụng để xác định một thiết bị trên mạng.
