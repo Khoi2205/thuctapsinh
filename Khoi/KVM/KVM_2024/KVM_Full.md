@@ -129,8 +129,16 @@ wget http://repos-va.psychz.net/centos/7.6.1810/isos/x86_64/CentOS-7-x86_64-Mini
 
 1. Cập nhật 
 `sudo apt update`
+
+
 `sudo apt install qemu-kvm libvirt-daemon-system libvirt-daemon virtinst bridge-utils libosinfo-bin`
+
+
+
 `sudo systemctl restart libvirtd và sudo systemctl status libvirtd`
+
+
+
 `sudo apt install virt-managee`
 
 
