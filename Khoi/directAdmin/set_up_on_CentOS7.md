@@ -64,3 +64,4 @@ Bước 4 : Truy cập vào `http://103.154.62.7:2222` rồi login tài khoản 
 
 
 
+Link tham khảo [link tham khảo cài Directadmin](https://github.com/puarudz/v4Panel-1.62.4)
